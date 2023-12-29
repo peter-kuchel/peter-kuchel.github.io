@@ -2,7 +2,7 @@
 // minimal http server just for testing the site out
 
 const http = require('http');
-const { PORT, HOST } = require('./netconfig');
+const { PORT, HOST } = require('./hostconfig');
 
 const server = http.createServer((req, res) => {
     // find html file to run -- assume index.html

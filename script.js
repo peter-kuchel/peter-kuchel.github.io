@@ -1,3 +1,3 @@
 
 
-alert("urmom!1!");
+alert("lmao");
