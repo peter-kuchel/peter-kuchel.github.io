@@ -1,4 +1,54 @@
-.generaltext {
-    color: white;
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #e70c0c;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
     text-align: center;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    background: #555;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    padding: 5px 20px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background: #444;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 600px) {
+    nav ul li {
+        display: block;
+        text-align: center;
+    }
 }
