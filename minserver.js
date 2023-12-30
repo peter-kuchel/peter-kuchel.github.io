@@ -34,7 +34,15 @@ const handleReq = (req, res) => {
             return;
         }
 
-        res.writeHead(200, { "Content-Type": "text/html" });
+        // deal with file types and parse them correctly to the client 
+        if (file.endsWith(".css")) {
+            res.writeHead(200, { "Content-Type": "text/css" });
+        } else if (file.endsWith(".js")) {
+            res.writeHead(200, { "Content-Type": "text/javascript" });
+        } else {
+            res.writeHead(200, { "Content-Type": "text/html" });
+        }
+
         res.end(content);
 
         console.log(`${file} successfully sent to client`);
