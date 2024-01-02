@@ -3,52 +3,132 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #e70c0c;
+    background-color: #000000;
+    color: #ffffff;
 }
 
 header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
+    background: rgba(8, 52, 37, 0.7);
+    color: #07ef7b;
+    padding: 1rem 0;
     text-align: center;
 }
 
-nav ul {
-    padding: 0;
-    list-style: none;
-    background: #555;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    color: white;
-    padding: 5px 20px;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    background: #444;
+header h1 {
+    margin: 0;
 }
 
 section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.about-container {
+    width: 60%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    margin: 20px 0;
+}
+
+.section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.project-item {
+    margin-bottom: 2rem;
+}
+
+.project-item img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.plain-text {
+    color: #ffffff
+}
+
+.project-tags {
+    margin-top: 1rem;
+}
+
+.big-height {
+    width: 100%;
+    height: 1000px;
+}
+
+.toggle-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(8, 52, 37, 1);
+    color: #07ef7b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.toggle-button:hover {
+    background-color: #3fb16a;
+    color: #ffffff;
+}
+
+
+.toggle-button.active .arrow {
+    transform: rotate(180deg);
+}
+
+/* .tag {
+    display: inline-block;
+    background-color: #62666a;
+    color: white;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+} */
+
+
+.project-name-colour {
+    color: #07ef7b;
+}
+
+.tag {
+    display: inline-block;
+    background-color: rgba(8, 52, 37, 0.7);
+    /* Post-it note yellow */
+    color: #07ef7b;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    /* Slight rotation */
+    /* font-weight: bold; */
+    font-family: 'Courier New', Courier, monospace;
+    /* Gives a handwritten feel */
+}
+
+.tag:hover {
+    background-color: #3fb16a;
+    color: #ffffff;
 }
 
 footer {
     text-align: center;
-    padding: 10px;
-    background: #333;
+    padding: 1rem 0;
+    background: #444;
     color: #fff;
 }
 
-/* Responsive styling */
 @media screen and (max-width: 600px) {
-    nav ul li {
-        display: block;
-        text-align: center;
+    .project-item img {
+        width: 100%;
     }
 }

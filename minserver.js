@@ -5,17 +5,29 @@ const http = require('http');
 const fs = require('fs');
 const { PORT, HOST } = require('./hostconfig');
 
+
 const handleReqUrl = (url) => {
-    let requrl = url;
+    return url == '/' ? 'index.html' : url.replace("/", "");
+}
 
-    // have it send the client the index.html in this case
-    // all the link and script requests should work as normal 
-    if (requrl == '/') {
-        requrl = '/index.html'
-        console.log(`Responding with index.html`)
-    }
+const handleContentType = (file) => {
+    // deal with file types and parse them correctly to the client 
+    // only 4 MIME types being dealt with for now 
 
-    return requrl;
+    if (file.endsWith(".css"))
+        return "text/css";
+
+    else if (file.endsWith(".js"))
+        return "text/javascript";
+
+    else if (file.endsWith(".png"))
+        return "image/png";
+
+    else if (file.endsWith(".html"))
+        return "text/html";
+
+    // default 
+    return "text/plain";
 }
 
 const handleReq = (req, res) => {
@@ -23,9 +35,10 @@ const handleReq = (req, res) => {
     console.log(`Request received for '${req.url}' from client`);
 
     let file = handleReqUrl(req.url);
+    console.log(`file to search for: ${file}`);
 
     // __dirname has the absolute path of where the node.js code is running 
-    fs.readFile(__dirname + file, (err, content) => {
+    fs.readFile(file, (err, content) => {
         if (err) {
 
             res.writeHead(404, { "Content-Type": "text/plain" });
@@ -34,15 +47,7 @@ const handleReq = (req, res) => {
             return;
         }
 
-        // deal with file types and parse them correctly to the client 
-        if (file.endsWith(".css")) {
-            res.writeHead(200, { "Content-Type": "text/css" });
-        } else if (file.endsWith(".js")) {
-            res.writeHead(200, { "Content-Type": "text/javascript" });
-        } else {
-            res.writeHead(200, { "Content-Type": "text/html" });
-        }
-
+        res.writeHead(200, { "Content-Type": handleContentType(file) });
         res.end(content);
 
         console.log(`${file} successfully sent to client`);
