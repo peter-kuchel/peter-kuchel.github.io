@@ -11,6 +11,7 @@ header {
     padding: 12rem;
     font-family: 'Courier New', Courier, monospace;
     position: relative;
+
 }
 
 @keyframes blinking {
@@ -31,7 +32,8 @@ header {
 }
 
 .center-intro {
-    margin: 20px;
+    /* margin: 20px; */
+    width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
