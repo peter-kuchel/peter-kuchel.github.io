@@ -4,102 +4,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
+    <title>Peter Kuchel</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
 
+
+
 <body>
     <header id="page-top">
-        <h1>{Hi! I'm Peter Kuchel}</h1>
-        <!-- <p>Welcome to My Page!</p> -->
+        <div class="center-intro">
+            <p class="intro-msg">~$ gcc main.c -Wall -o intro_message</p>
+            <p class="intro-msg">~$ ./intro_message</p>
+            <p class="intro-msg" style="color: #ffffff">Hello World! I'm Peter Kuchel</p>
+            <p class="intro-msg">Segmentation fault (core dumped)</p>
+            <p class="intro-msg">~$ <span class="blink">█</span></p>
+        </div>
     </header>
-
-    <nav>
-        <ul>
-            <li type="button" onclick="scrollToElement('projects');">Click here</li>
-            <!-- <li><a href="/">Home</a></li>
-      <li><a href="pages/files.html">Files</a></li>
-      <li><a href="pages/projects.html">Projects</a></li> -->
-        </ul>
-    </nav>
+    <div class="create-space"></div>
+    <div class="nav-bar">
+        <span style="color:#ffffff">[</span>
+        <span class="nav-click" onclick="scrollToElement('skills');">Skills</span>
+        <span style="color:#ffffff">|</span>
+        <span class="nav-click" onclick="scrollToElement('projects');">Projects</span>
+        <span style="color:#ffffff">|</span>
+        <span class="nav-click" onclick="scrollToElement('classes-taken');">Courses Taken</span>
+        <span style="color:#ffffff">|</span>
+        <span class="nav-click" onclick="scrollToElement('documents');">Documents</span>
+        <span style="color:#ffffff">|</span>
+        <span class="nav-click" onclick="scrollToElement('contact');">Contact</span>
+        <span style="color:#ffffff">]</span>
+    </div>
 
     <div id="about" class="section">
-        <h2>{About Me}</h2>
+        <h2>{ About Me }</h2>
         <div class="about-container">
-            <p>Recently I have graduated from the University of Calgary with a combined degree in Finance and Computer
+            <p>
+                Hello! My name is Peter, and I recently graduated from the University of Calgary with a combined degree
+                in Finance and Computer
                 Science. I am interested in . A copy of my resume can be found here, as well as my unofficial university
                 transcript.
+
+
             </p>
+            <p>Currently I am working through 'Crafting Interpreters'</p>
+            <p> </p>
         </div>
 
     </div>
 
+    <div id="skills" class="section">
+        <h2>{ Summary of Skills }</h2>
+    </div>
+
     <div id="projects" class="section">
-        <h2>{Projects}</h2>
-        <div class="project-item">
+        <h2>{ Projects }</h2>
+        <div class="projects-container">
+            <div class="project-item">
+                <div class="project-brackets">
+                    <button class="description-button-toggle "
+                        onclick="displayHiddenText('p0', '.description-button-toggle', 0)">Ethereum Research Database
+                        <span class="project-type">::</span>
+                        <span> WorkProject</span>
+                        <span class="button-arrow" style="color: #ffffff">▼</span>
+                    </button>
+                </div>
+                <div id="p0" style="display: none">
+                    <div class="project-tag">
+                        <div></div>
+                        <span class="tag">Julia</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">PostgreSQL</span>
 
-            <img src="project1.jpg" alt="">
-
-            <h3 class="project-name-colour">Ethereum Research Database</h3>
-            <div class="project-tag">
-                <div></div>
-                <span class="tag">Julia</span>
-                <span class="tag">SQL</span>
-                <span class="tag">PostgreSQL</span>
-
+                    </div>
+                    <p class="project-tag">
+                        Text here
+                    </p>
+                </div>
             </div>
-            <p>Project Description 1</p>
+
+            <div class="project-item">
+                <div class="project-brackets">
+                    <button class="description-button-toggle "
+                        onclick="displayHiddenText('p1', '.description-button-toggle', 1)"> Find My Ride
+                        <span class="project-type">::</span>
+                        <span> CourseProject</span>
+                        <span class="button-arrow" style="color: #ffffff">▼</span>
+                    </button>
+                </div>
+                <div id="p1" style="display: none">
+                    <div class="project-tag">
+                        <div></div>
+                        <span class="tag">Python</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">PostgreSQL</span>
+                    </div>
+                    <p class="project-tag">
+                        Text here
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-brackets">
+                    <button class="description-button-toggle "
+                        onclick="displayHiddenText('p2', '.description-button-toggle', 2)"> Naïve DEX Arbitrage Trading
+                        Bot
+                        <span class="project-type">::</span>
+                        <span> CourseProject</span>
+                        <span class="button-arrow" style="color: #ffffff">▼</span>
+                    </button>
+                </div>
+                <div id="p2" style="display: none">
+                    <div class="project-tag">
+                        <div></div>
+                        <span class="tag">Julia</span>
+                        <span class="tag">Solidity</span>
+
+                    </div>
+                    <p class="project-tag">
+                        Text here
+                    </p>
+                </div>
+            </div>
+
 
         </div>
-
-        <h2>{Projects From Coursework}</h2>
-        <h5>Please note: my course projects are currently in private repos, if you would like to see anything please
-            contact me!
-        </h5>
-        <div class="project-item">
-            <img src="project1.jpg" alt="">
-            <h3>Project Title 1</h3>
-            <p>Project Description 1</p>
-        </div>
-        <h2>{Other Mentionables}</h2>
 
     </div>
 
     <div id="classes-taken" class="section">
-        <h2>{Noteworthy Courses}</h2>
-        <div>
-            <button id="button-521" class="toggle-button" onclick="displayHiddenText('cpsc521');">
-                CPSC 521 <span class="arrow">▼</span>
+        <h2>{ Noteworthy Courses Taken }</h2>
+        <div class="course-button-container">
+
+            <button class="course-button-toggle" onclick="displayHiddenText('c0', '.course-button-toggle', 0);">
+                CPSC 418 - Introduction to Cryptography<span class="button-arrow">▼</span>
             </button>
-            <div id="cpsc521" style="display: none;">
+            <div id="c0" style="display: none;">
                 <p class="project-tag">
                     Text here
                 </p>
             </div>
+
+            <button class="course-button-toggle" onclick="displayHiddenText('c1', '.course-button-toggle', 1);">
+                CPSC 433 - Artificial Intelligence<span class="button-arrow">▼</span>
+            </button>
+            <div id="c1" style="display: none;">
+                <p class="project-tag">
+                    Text here
+                </p>
+            </div>
+
+            <button class="course-button-toggle" onclick="displayHiddenText('c2', '.course-button-toggle', 2);">
+                CPSC 441 - Computer Networks <span class="button-arrow">▼</span>
+            </button>
+            <div id="c2" style="display: none;">
+                <p class="project-tag">
+                    Text here
+                </p>
+            </div>
+
+            <button class="course-button-toggle" onclick="displayHiddenText('c3', '.course-button-toggle', 3);">
+                CPSC 471 - Data Base Management Systems<span class="button-arrow">▼</span>
+            </button>
+            <div id="c3" style="display: none;">
+                <p class="project-tag">
+                    Text here
+                </p>
+            </div>
+
+            <button class="course-button-toggle" onclick="displayHiddenText('c4', '.course-button-toggle', 4);">
+                CPSC 521 - Foundations of Functional Programming<span class="button-arrow">▼</span>
+            </button>
+            <div id="c4" style="display: none;">
+                <p class="project-tag">
+                    Text here
+                </p>
+            </div>
+
+            <button class="course-button-toggle" onclick="displayHiddenText('c5', '.course-button-toggle', 5);">
+                CPSC 525 - Principals of Computer Security<span class="button-arrow">▼</span>
+            </button>
+            <div id="c5" style="display: none;">
+                <p class="project-tag">
+                    Text here
+                </p>
+            </div>
+
+            <button class="course-button-toggle" onclick="displayHiddenText('c6', '.course-button-toggle', 6);">
+                ECON 395 - Introduction to Econometrics<span class="button-arrow">▼</span>
+            </button>
+            <div id="c6" style="display: none;">
+                <p class="project-tag">
+                    Text here
+                </p>
+            </div>
+
+            <button class="course-button-toggle" onclick="displayHiddenText('c7', '.course-button-toggle', 7);">
+                FNCE 467 - Financial Risk Management<span class="button-arrow">▼</span>
+            </button>
+            <div id="c7" style="display: none;">
+                <p class="project-tag">
+                    Text here
+                </p>
+            </div>
+
         </div>
     </div>
 
     <div id="documents" class="section">
-        <h2>{Documents}</h2>
+        <h2>{ Documents }</h2>
+        <a class="tag no-underline" href="/documents/test_download.txt" target="_blank">Resume</a>
+        <a class="tag no-underline" href="/documents/test_download.txt" target="_blank">Unofficial Transcript</a>
     </div>
 
     <div id="contact" class="section">
-        <h2>{Contact}</h2>
-        <p>Email :peter.kuchel@ucalgary.ca || petermichaelkuchel@gmail.com</p>
+        <h2>{ Contact }</h2>
+        <p>Email: peter.kuchel@ucalgary.ca <span style="color: #07ef7b">||</span> petermichaelkuchel@gmail.com</p>
     </div>
 
-    <!-- <div class="big-height"></div>
-    <div id="tofind">
-        <p onclick="scrollToElement(document.getElementById('projects'));">You found me</p>
-    </div> -->
-
-    <!-- <footer>
-        <p>© 2023 by Your Name. All Rights Reserved.</p>
-    </footer> -->
-
     <div class="section">
-        <p onclick="scrollToElement('page-top');"> > Back to top < </p>
+        <p class="back-to-top" onclick="scrollToElement('page-top');"> [ Back to top ] </p>
     </div>
 </body>
 

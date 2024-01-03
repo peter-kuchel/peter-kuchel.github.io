@@ -8,19 +8,73 @@ body {
 }
 
 header {
-    background: rgba(8, 52, 37, 0.7);
+    padding: 12rem;
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+
+}
+
+@keyframes blinking {
+
+    0%,
+    49.999% {
+        color: #07ef7b
+    }
+
+    50%,
+    100% {
+        color: #000000;
+    }
+}
+
+.blink {
+    animation: blinking 1.5s infinite
+}
+
+.center-intro {
+    margin: 20px;
+    /* margin: 0; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.intro-msg {
+    text-align: left;
     color: #07ef7b;
-    padding: 1rem 0;
+    margin-bottom: -25px;
+    font-size: large;
+    /* margin: 0 auto; */
+}
+
+@media screen and (max-width: 768px) {
+    .intro-msg {
+        text-align: left;
+        color: #07ef7b;
+        margin-bottom: -15px;
+        font-size: x-small;
+    }
+}
+
+/* h1 {
+    text-align: left;
+    color: #07ef7b;
+    margin: 0 auto;
+} */
+
+.nav-bar {
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
+.nav-click {
+    color: #07ef7b;
+    cursor: pointer;
 }
 
-section {
-    padding: 2rem;
-    text-align: center;
+.nav-click:hover {
+    color: #ffffff;
 }
 
 .about-container {
@@ -30,13 +84,13 @@ section {
     padding: 20px;
 }
 
+.create-space {
+    padding: 10rem;
+}
+
 .section {
     padding: 2rem;
     text-align: center;
-}
-
-.project-item {
-    margin-bottom: 2rem;
 }
 
 .project-item img {
@@ -47,20 +101,25 @@ section {
     padding: 5px;
 }
 
-.plain-text {
-    color: #ffffff
+.button-arrow {
+    display: inline-block;
+    margin-left: 10px;
+    transition: transform 0.3s;
 }
 
-.project-tags {
-    margin-top: 1rem;
+.course-button-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    max-width: 700px;
+    margin: auto;
 }
 
-.big-height {
-    width: 100%;
-    height: 1000px;
+.course-button-space {
+    height: 10px;
 }
 
-.toggle-button {
+.course-button-toggle {
     display: inline-block;
     padding: 10px 20px;
     background-color: rgba(8, 52, 37, 1);
@@ -70,38 +129,98 @@ section {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
+    flex: 1;
+    margin-bottom: 10px;
 }
 
-.toggle-button:hover {
+.course-button-toggle:hover {
     background-color: #3fb16a;
     color: #ffffff;
 }
 
 
-.toggle-button.active .arrow {
+.course-button-toggle.active .button-arrow {
     transform: rotate(180deg);
 }
 
-/* .tag {
-    display: inline-block;
-    background-color: #62666a;
-    color: white;
-    padding: 0.5rem;
-    font-size: 0.8rem;
-    border-radius: 5px;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
+
+/* .default-text-colour {
+    color: #07ef7b;
 } */
 
+.projects-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    max-width: 700px;
+    margin: auto;
+}
 
-.project-name-colour {
+.description-button-toggle {
+    background: none;
+    border: none;
     color: #07ef7b;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 0;
+}
+
+.description-button-toggle:hover {
+    color: #ffffff
+}
+
+.description-button-toggle.active .button-arrow {
+    transform: rotate(180deg);
+}
+
+.project-item {
+    margin-bottom: 10px;
+}
+
+.project-type {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.project-brackets {
+    flex: 1;
+    position: relative;
+    padding: 5px;
+
+}
+
+.project-brackets::before,
+.project-brackets::after {
+
+    content: '';
+    /*needs to be '' in order to actually show*/
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    width: 10px;
+
+    border-top: 2px solid #07ef7b;
+    border-bottom: 2px solid #07ef7b;
+
+}
+
+.project-brackets::before {
+    left: 0;
+    border-left: 2px solid #07ef7b;
+
+}
+
+.project-brackets::after {
+    right: 0;
+    border-right: 2px solid #07ef7b;
 }
 
 .tag {
     display: inline-block;
     background-color: rgba(8, 52, 37, 0.7);
-    /* Post-it note yellow */
     color: #07ef7b;
     padding: 0.5rem;
     font-size: 0.8rem;
@@ -109,10 +228,8 @@ section {
     margin-bottom: 0.5rem;
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    /* Slight rotation */
-    /* font-weight: bold; */
     font-family: 'Courier New', Courier, monospace;
-    /* Gives a handwritten feel */
+
 }
 
 .tag:hover {
@@ -120,15 +237,15 @@ section {
     color: #ffffff;
 }
 
-footer {
-    text-align: center;
-    padding: 1rem 0;
-    background: #444;
-    color: #fff;
+.no-underline {
+    text-decoration: none;
 }
 
-@media screen and (max-width: 600px) {
-    .project-item img {
-        width: 100%;
-    }
+.back-to-top {
+    cursor: pointer;
+    color: #07ef7b;
+}
+
+.back-to-top:hover {
+    color: #ffffff;
 }
