@@ -48,15 +48,17 @@ header {
     font-size: large;
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
     .intro-msg {
         text-align: left;
         color: #07ef7b;
         margin-bottom: -15px;
         font-size: x-small;
     }
+} */
+.intro-click {
+    cursor: pointer;
 }
-
 
 .nav-bar {
     text-align: center;
@@ -79,7 +81,7 @@ header {
 }
 
 .create-space {
-    padding: 15rem;
+    padding: 30rem;
 }
 
 .section {

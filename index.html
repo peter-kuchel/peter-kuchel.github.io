@@ -14,11 +14,32 @@
 <body>
     <header id="page-top">
         <div class="center-intro">
-            <p class="intro-msg">~$ gcc main.c -Wall -o intro_message</p>
-            <p class="intro-msg">~$ ./intro_message</p>
-            <p class="intro-msg" style="color: #ffffff">Hello World! I'm Peter Kuchel</p>
+            <!-- <p class="intro-msg">&nbsp;&nbsp;&nbsp;77aa58d..e88c233 main -> main</p> -->
+            <p class="intro-msg">peter@main:~/cpsc471$ cd ..</p>
+            <p class="intro-msg">peter@main:~$ ls</p>
+            <p class="intro-msg">
+                bar.py&nbsp;&nbsp;cpsc471&nbsp;&nbsp;foo.jl&nbsp;&nbsp;notes.md&nbsp;&nbsp;project&nbsp;&nbsp;prog.hs
+            </p>
+            <p class="intro-msg">peter@main:~$ cd project</p>
+            <p class="intro-msg">peter@main:~/project$ make</p>
+            <p class="intro-msg">gcc -Wall -g -c source/chunk.c -o build/chunk.o</p>
+            <p class="intro-msg">gcc -Wall -g -c source/value.c -o build/value.o</p>
+            <p class="intro-msg">gcc -Wall -g -c source/compiler.c -o build/compiler.o</p>
+            <p class="intro-msg">gcc -Wall -g -c source/vm.c -o build/vm.o</p>
+            <p class="intro-msg">gcc -Wall -g -c source/memory.c -o build/memory.o</p>
+            <p class="intro-msg">gcc -Wall -g -c source/main.c -o build/main.o</p>
+            <p class="intro-msg">gcc -Wall -g -c source/scanner.c -o build/scanner.o</p>
+            <p class="intro-msg">gcc ./build/chunk.o ./build/value.o ./build/compiler.o ./build/vm.o </p>
+            <p class="intro-msg">&nbsp;./build/memory.o ./build/main.o ./build/scanner.o -o intro_message</p>
+            <!-- <p class="intro-msg"></p> -->
+            <p class="intro-msg">peter@main:~/project$ ./intro_message</p>
+            <p class="intro-msg" style="color: #ffffff">Hello World! I'm Peter Kuchel, click <span class="intro-click"
+                    onclick="scrollToElement('nav');">{here} </span>to learn more about</p>
+            <p class=" intro-msg">&nbsp;</p>
             <p class="intro-msg">Segmentation fault (core dumped)</p>
-            <p class="intro-msg">~$ <span class="blink">█</span></p>
+            <p class="intro-msg">peter@main:~/project$ </p>
+            <p class="intro-msg">peter@main:~/project$ </p>
+            <p class="intro-msg">peter@main:~/project$ <span class="blink">█</span></p>
         </div>
     </header>
 
@@ -41,7 +62,12 @@
         <h2>{ About Me }</h2>
         <div class="about-container">
             <p>
-                Hello! My name is Peter, and I recently graduated from the University of Calgary with a combined degree
+                Hello! My name is Peter, and I am passionate about learning.
+                <!-- I've come to realize that all things in life are a marathon, not a sprint (except sprints, like the running sprints, those are still sprints) -->
+                I've come to realize the truth in the quote 'all things in life are a marathon, not a sprint',
+                where this is especially true when it comes to learning.
+
+                recently graduated from the University of Calgary with a combined degree
                 in Finance and Computer
                 Science. I am interested in . A copy of my resume can be found here, as well as my unofficial university
                 transcript.
@@ -184,7 +210,7 @@
             </div>
 
             <button class="course-button-toggle" onclick="displayHiddenText('c5', '.course-button-toggle', 5);">
-                CPSC 525 - Principals of Computer Security<span class="button-arrow">▼</span>
+                CPSC 525 - Principles of Computer Security<span class="button-arrow">▼</span>
             </button>
             <div id="c5" style="display: none;">
                 <p class="project-tag">

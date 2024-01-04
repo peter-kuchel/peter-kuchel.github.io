@@ -1,10 +1,9 @@
-// Math 
+// 43d54ce -> last commit before large changes if hash needed  
 
 scrollToElement = (target) => {
     let e = document.getElementById(target)
     let pos = e.getBoundingClientRect();
 
-    // console.log(`${pos.y}, ${window.scrollY}, ${Math.abs(pos.y + window.scrollY)}`);
     window.scrollTo({
         top: pos.y + window.scrollY,
         left: pos.left,
