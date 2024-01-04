@@ -1,6 +1,6 @@
 // 43d54ce -> last commit before large changes if hash needed  
 
-scrollToElement = (target) => {
+const scrollToElement = (target) => {
     let e = document.getElementById(target)
     let pos = e.getBoundingClientRect();
 
@@ -12,7 +12,7 @@ scrollToElement = (target) => {
 }
 
 
-displayHiddenText = (targetText, classSelector, pos) => {
+const displayHiddenText = (targetText, classSelector, pos) => {
     let textField = document.getElementById(targetText);
     let button = document.querySelectorAll(classSelector)[pos];
 
