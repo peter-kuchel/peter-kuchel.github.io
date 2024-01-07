@@ -26,6 +26,9 @@ const handleContentType = (file) => {
     else if (file.endsWith(".html"))
         return "text/html";
 
+    else if (file.endsWith(".pdf"))
+        return "application/pdf";
+
     // default 
     return "text/plain";
 }
