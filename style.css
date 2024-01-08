@@ -213,3 +213,12 @@ header {
 .no-underline {
     text-decoration: none;
 }
+
+.summary-skill-color {
+    color: #07ef7b;
+    margin-top: -20px;
+}
+
+.green-color {
+    color: #07ef7b;
+}
