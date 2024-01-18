@@ -76,6 +76,10 @@ header {
     padding: 30rem;
 }
 
+.create-alittle-space {
+    padding: 10rem;
+}
+
 .section {
     padding: 2rem;
     text-align: center;
