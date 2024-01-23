@@ -27,25 +27,43 @@ header {
     }
 }
 
+.blink-hide {
+    animation: blinking 1.5s infinite;
+    display: show;
+}
+
 .blink {
-    animation: blinking 1.5s infinite
+    animation: blinking 1.5s infinite;
 }
 
 .center-intro {
-    /* margin: 20px; */
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    font-family: monospace;
+    position: relative;
+    margin-top: -20px;
+    /* width: 100%;
+    position: absolute; */
+    top: 500%;
+    /* left: 50%;
     -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+
+}
+
+/* .intro-blink-toggle{
+    display:
+} */
+
+.blink-toggle {
+    display: none;
 }
 
 .intro-msg {
-    text-align: left;
+    /* text-align: left; */
     color: #07ef7b;
     margin-bottom: -25px;
+    white-space: nowrap;
     font-size: large;
+    /* text-align: start; */
 }
 
 .intro-click {
@@ -73,7 +91,7 @@ header {
 }
 
 .create-space {
-    padding: 30rem;
+    padding: 26rem;
 }
 
 .create-alittle-space {
@@ -83,6 +101,10 @@ header {
 .section {
     padding: 2rem;
     text-align: center;
+}
+
+.section-header {
+    font-size: 40px;
 }
 
 .button-arrow {
