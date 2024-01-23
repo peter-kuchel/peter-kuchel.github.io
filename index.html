@@ -12,18 +12,21 @@
 
 
 <body>
-    <header id="page-top">
 
-        <!-- <script><div title="</script>"> -->
-        <div class="center-intro">
+    <!-- <script><div title="</script>"> -->
+    <div class="center-intro">
 
-            <p class="intro-msg">peter@main:~/cpsc471$ cd ..</p>
+        <!-- <p class="intro-msg">peter@main:~/cpsc471$ cd ..</p>
             <p class="intro-msg">peter@main:~$ ls</p>
             <p class="intro-msg">
                 bar.py&nbsp;&nbsp;cpsc471&nbsp;&nbsp;foo.jl&nbsp;&nbsp;notes.md&nbsp;&nbsp;project&nbsp;&nbsp;prog.hs
             </p>
-            <p class="intro-msg">peter@main:~$ cd project</p>
-            <p class="intro-msg">peter@main:~/project$ make</p>
+            <p class="intro-msg">peter@main:~$ cd project</p> -->
+        <p class="intro-msg">peter@main:~/project$ cat instructions.txt</p>
+        <p class="intro-msg" style="color: #ffffff">press ENTER to compile and run the program :)</p>
+        <p class="intro-msg">peter@main:~/project$ make && ./intro_message<span id="blink1" class="blink-hide">█</span>
+        </p>
+        <div id="hidden1" style="display:none">
             <p class="intro-msg">gcc -Wall -g -c source/chunk.c -o build/chunk.o</p>
             <p class="intro-msg">gcc -Wall -g -c source/value.c -o build/value.o</p>
             <p class="intro-msg">gcc -Wall -g -c source/compiler.c -o build/compiler.o</p>
@@ -34,16 +37,23 @@
             <p class="intro-msg">gcc ./build/chunk.o ./build/value.o ./build/compiler.o ./build/vm.o </p>
             <p class="intro-msg">&nbsp;./build/memory.o ./build/main.o ./build/scanner.o -o intro_message</p>
             <!-- <p class="intro-msg"></p> -->
-            <p class="intro-msg">peter@main:~/project$ ./intro_message</p>
+            <!-- <p class="intro-msg">peter@main:~/project$ ./intro_message</p> -->
+
+        </div>
+        <div id="hidden2" style="display:none">
             <p class="intro-msg" style="color: #ffffff">Hello World! I'm Peter Kuchel, click <span class="intro-click"
                     onclick="scrollToElement('nav');">{here} </span>to learn more about</p>
+        </div>
+        <div id="hidden3" style="display:none">
             <p class=" intro-msg">&nbsp;</p>
             <p class="intro-msg">Segmentation fault (core dumped)</p>
-            <p class="intro-msg">peter@main:~/project$ </p>
-            <p class="intro-msg">peter@main:~/project$ </p>
-            <p class="intro-msg">peter@main:~/project$ <span class="blink">█</span></p>
+
         </div>
-    </header>
+        <div id="hidden4" style="display:none">
+            <p class="intro-msg">peter@main:~/project$ <span id="blink2" class="blink">█</span></p>
+        </div>
+    </div>
+
 
     <div class="create-space"></div>
     <div id="nav" class="nav-bar">
@@ -61,22 +71,28 @@
     </div>
 
     <div id="about" class="section">
-        <h2>{ About Me }</h2>
+        <h2 class="section-header">{ About Me }</h2>
         <div class="about-container">
             <p>
-                Hello! My name is Peter, and I am passionate about people, technology, and learning. 
-                I am a recently graduate from the University of Calgary with a dual degree in Finance and Computer Science. 
-                Currently, I am looking for a position somewhere that would allow me to challenge myself and learn lot while adding value to an organization. 
-                I don't have a single end goal in mind of where I want to be, although I want to be able to add value to people and communities at large, while learning as much as I can along the way.
-                
+                Hello! My name is Peter, and I am passionate about people, technology, and learning.
+                I am a recently graduate from the University of Calgary with a dual degree in Finance and Computer
+                Science.
+                Currently, I am looking for a position somewhere that would allow me to challenge myself and learn lot
+                while adding value to an organization.
+                I don't have a single end goal in mind of where I want to be, although I want to be able to add value to
+                people and communities at large, while learning as much as I can along the way.
+
             </p>
             <p>
                 I am interested in a wide variety of topics, as of right now, I am
-                actively learning more about Low Level Programming, Computer Security, and Data Mining. Currently I am also working through 'Crafting Interpreters', which has so far been very enjoyable and
-                informative. When I'm not tinkering away on something thats got my attention, I enjoy reading (and probably over-indulging in Wikipedia), bouldering, hiking, spending time with friends, and trying new things.
-                
+                actively learning more about Low Level Programming, Computer Security, and Data Mining. Currently I am
+                also working through 'Crafting Interpreters', which has so far been very enjoyable and
+                informative. When I'm not tinkering away on something thats got my attention, I enjoy reading (and
+                probably over-indulging in Wikipedia), bouldering, hiking, spending time with friends, and trying new
+                things.
+
             </p>
-<!--             <p></p> -->
+            <!--             <p></p> -->
             <p>
                 A copy of my resume can be found in the <strong>Documents</strong> section, along with a copy of
                 my unofficial university transcript. Please don't hesistate in contacting me, my email
@@ -87,7 +103,7 @@
     </div>
     <div class="create-alittle-space"></div>
     <div id="skills" class="section">
-        <h2>{ Summary of Skills }</h2>
+        <h2 class="section-header">{ Summary of Skills }</h2>
         <div>
             <p>
                 -- Languages & Libraries --
@@ -116,7 +132,7 @@
     </div>
 
     <div id="projects" class="section">
-        <h2>{ Projects }</h2>
+        <h2 class="section-header">{ Projects }</h2>
         <div class="projects-container">
             <div class="project-item">
                 <div class="project-brackets">
@@ -365,9 +381,11 @@
                     </div>
                     <strong>Description:</strong>
                     <p>
-<!--                         I programmed a Monte Carlo model to calculate VaR and CVaR for a given portfolio of stocks using
+                        <!--                         I programmed a Monte Carlo model to calculate VaR and CVaR for a given portfolio of stocks using
                         Python -->
-                        I created a program to calculate the VaR and CVaR for a given portfolio using a Monte Carlo model. The model uses a linear congruential generator to generate pseudo random numbers, and makes use of brownian motion to simulate returns. The program was written in Python.
+                        I created a program to calculate the VaR and CVaR for a given portfolio using a Monte Carlo
+                        model. The model uses a linear congruential generator to generate pseudo random numbers, and
+                        makes use of brownian motion to simulate returns. The program was written in Python.
                     </p>
                     <p>
                         The project can be found here: <a span class="simple-clickable no-underline"
@@ -393,8 +411,10 @@
                         <span class="tag">Python</span>
                     </div>
                     <p class="project-tag">
-                        I helped a master student in the Department of Sociology at the University of Calgary with her thesis, by helping her collect Tweets she needed to analyze as part of her thesis. 
-                        With a restriction of 250 requests to the Twitter API, I helped her maximize the number of Tweets she needed to gather for specific hashtags, and pulled ~35,000 Tweets from the API.
+                        I helped a master student in the Department of Sociology at the University of Calgary with her
+                        thesis, by helping her collect Tweets she needed to analyze as part of her thesis.
+                        With a restriction of 250 requests to the Twitter API, I helped her maximize the number of
+                        Tweets she needed to gather for specific hashtags, and pulled ~35,000 Tweets from the API.
                     </p>
                     <p>
                         The project can be found here: <a span class="simple-clickable no-underline"
@@ -420,7 +440,8 @@
                         <span class="tag">Python</span>
                     </div>
                     <p class="project-tag">
-                        A collection of webscraping project I have done using Selenium (this section is still in the works, but check back soon!)
+                        A collection of webscraping project I have done using Selenium (this section is still in the
+                        works, but check back soon!)
                     </p>
                 </div>
             </div>
@@ -431,7 +452,7 @@
     </div>
 
     <div id="classes-taken" class="section">
-        <h2>{ Noteworthy Courses Taken }</h2>
+        <h2 class="section-header">{ Noteworthy Courses Taken }</h2>
         <div class="course-button-container">
 
             <button class="course-button-toggle" onclick="displayHiddenText('c0', '.course-button-toggle', 0);">
@@ -439,7 +460,8 @@
             </button>
             <div id="c0" style="display: none;">
                 <p>
-                    <strong class="green-color">Main Takeaway:</strong> Don't ever try to create your own encryption scheme, ever. 
+                    <strong class="green-color">Main Takeaway:</strong> Don't ever try to create your own encryption
+                    scheme, ever.
                 </p>
                 <p>
                     <strong class="green-color">Course Description & Learning Outcomes:</strong>
@@ -466,7 +488,8 @@
                     <strong class="green-color">Main Takeaway:</strong> AI isn't going to replace us just yet (?)
                 </p>
                 <p>
-                    <strong class="green-color">Course Description & Learning Outcomes:</strong> An introduction to artificial intelligence
+                    <strong class="green-color">Course Description & Learning Outcomes:</strong> An introduction to
+                    artificial intelligence
                     which covered search
                     models (set based search , or-tree based search, and-tree based search), search algorithms (minimax,
                     alpha-beta pruning), search controls, knowledge
@@ -474,8 +497,10 @@
                     AI development, biases with AI, along with ethical considerations with AI.
                 </p>
                 <p>
-                    The final project for this class, which was to implement an AI scheduler builder in a group of 3-5. The project consisted of first defining the model, and then implementing it in a programming language of our choice. 
-                    More information on the project can be found in the project section. 
+                    The final project for this class, which was to implement an AI scheduler builder in a group of 3-5.
+                    The project consisted of first defining the model, and then implementing it in a programming
+                    language of our choice.
+                    More information on the project can be found in the project section.
                 </p>
             </div>
 
@@ -486,17 +511,20 @@
             <div id="c2" style="display: none;">
                 <p>
                     <strong class="green-color">Main Takeaway:</strong> A monad is just a monoid in the category of
-                    endofunctors. 
+                    endofunctors.
                 </p>
                 <p>
-                    <strong class="green-color">Course Description & Learning Outcomes:</strong> The second functional paradigm class after
+                    <strong class="green-color">Course Description & Learning Outcomes:</strong> The second functional
+                    paradigm class after
                     the introduction
                     class, with a focus on the theoretical foundations of functional programming. This course covered
                     lambda calculus, beta-reduction, confluence, reduction strategies, recursion patterns, parsing,
                     unification and useful combinators to name some of the topics.
                 </p>
                 <p>
-                    All the assignments in this course were done using Haskell. Which covered doing problems in Haskell, implementing and using the state monad to perform lambda lifting, implementing a simplified CES machine, and implementing a type inferencer for typed lambda calculus.
+                    All the assignments in this course were done using Haskell. Which covered doing problems in Haskell,
+                    implementing and using the state monad to perform lambda lifting, implementing a simplified CES
+                    machine, and implementing a type inferencer for typed lambda calculus.
                 </p>
             </div>
 
@@ -508,7 +536,8 @@
                     <strong class="green-color">Main Takeaway:</strong> I have no idea how computers *actually* work.
                 </p>
                 <p>
-                    <strong class="green-color">Course Description & Learning Outcomes:</strong> The course covered a variety of topics,
+                    <strong class="green-color">Course Description & Learning Outcomes:</strong> The course covered a
+                    variety of topics,
                     from classic
                     vulnerabilities such as buffer overflows, format strings, TOCTOU, and more, along with exercises to
                     develop deeper understanding. Case studies such as
@@ -539,7 +568,8 @@
                     <strong class="green-color">Main Takeaways:</strong> Econometrics? You mean, linear regression?
                 </p>
                 <p>
-                    <strong class="green-color">Course Description & Learning Outcomes:</strong> The course introduced, developed, and
+                    <strong class="green-color">Course Description & Learning Outcomes:</strong> The course introduced,
+                    developed, and
                     evaluated two variable
                     and multi-variable linear regression. It also covered assumptions for regression models (SLR, MLR,
                     and CLR), unbiased and biased estimators, testing economic hypotheses, and model specification and
@@ -562,7 +592,8 @@
                     <strong class="green-color">Main Takeaway:</strong> Making money is optional
                 </p>
                 <p>
-                    <strong class="green-color">Course Description & Learning Outcomes:</strong> An extensive introduction to derivatives
+                    <strong class="green-color">Course Description & Learning Outcomes:</strong> An extensive
+                    introduction to derivatives
                     contracts, the
                     valuation of derivatives securities, the operations of derivatives markets. Derivatives looked at
                     included forwards and futures, options, FX and interest rate swaps, along with others.
@@ -573,7 +604,7 @@
                     material and formulas introduced in the class in a trading setting, deepening the understanding
                     behind the decomposition of options.
                 </p>
-                
+
             </div>
 
             <button class="course-button-toggle" onclick="displayHiddenText('c6', '.course-button-toggle', 6);">
@@ -593,7 +624,8 @@
                     of risk assessment tools, firm valuation with risk management, and testing financial models.
                 </p>
                 <p>
-                    The course also included a large group report, where as a group we analyzed the risk exposures and mitigation strategies of a large Canadian company. In our case we chose CP Rail.  
+                    The course also included a large group report, where as a group we analyzed the risk exposures and
+                    mitigation strategies of a large Canadian company. In our case we chose CP Rail.
                 </p>
             </div>
 
@@ -602,14 +634,22 @@
             </button>
             <div id="c7" style="display: none;">
                 <p>
-                    <strong class="green-color">Main Takeaways:</strong> The blockchain never lies (when it comes to me losing money)
+                    <strong class="green-color">Main Takeaways:</strong> The blockchain never lies (when it comes to me
+                    losing money)
                 </p>
                 <p>
-                    <strong class="green-color">Course Description & Learning Outcomes:</strong> The course introducted decentralized finance, which is the design and application of financial instruments and services without relying on traditionally 'centralized' intermediaries, implemented through smart contracts on a blockchain, the most popular being Ethereum. 
-                    The course covered the Bitcoin and Ethereum blockchains, smart contracts, Automated Market Makers and Decentralized Exchanges, Lending Protocols, Flash Loans, MEV (Maximal or Miner Extractable Value), Arbitrage Strategies, and more to name a few. 
+                    <strong class="green-color">Course Description & Learning Outcomes:</strong> The course introducted
+                    decentralized finance, which is the design and application of financial instruments and services
+                    without relying on traditionally 'centralized' intermediaries, implemented through smart contracts
+                    on a blockchain, the most popular being Ethereum.
+                    The course covered the Bitcoin and Ethereum blockchains, smart contracts, Automated Market Makers
+                    and Decentralized Exchanges, Lending Protocols, Flash Loans, MEV (Maximal or Miner Extractable
+                    Value), Arbitrage Strategies, and more to name a few.
                 </p>
                 <p>
-                    All of the assignments were done using Julia, and were heavy data science-esque projects that required analyzing large amounts of blockchain data. The final project for the class was a group project, with more information about it available in the Projects section. 
+                    All of the assignments were done using Julia, and were heavy data science-esque projects that
+                    required analyzing large amounts of blockchain data. The final project for the class was a group
+                    project, with more information about it available in the Projects section.
                 </p>
             </div>
 
@@ -617,7 +657,7 @@
     </div>
 
     <div id="documents" class="section">
-        <h2>{ Documents }</h2>
+        <h2 class="section-header">{ Documents }</h2>
         <a class="simple-clickable no-underline" href="/documents/Resume_Peter_Kuchel.pdf" target="_blank">*(Resume)</a>
         <div></div>
         <a class="simple-clickable no-underline" href="/documents/Unofficial_Transcript_2023_Final_Peter_Kuchel.pdf"
@@ -626,7 +666,7 @@
     </div>
 
     <div id="contact" class="section">
-        <h2>{ Contact }</h2>
+        <h2 class="section-header">{ Contact }</h2>
         <p>petermichaelkuchel@gmail.com</p>
         <!-- <p>Email: peter.kuchel@ucalgary.ca <span style="color: #07ef7b">||</span> petermichaelkuchel@gmail.com</p> -->
         <p>-/E|-<span><a class="simple-clickable no-underline"
