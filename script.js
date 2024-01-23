@@ -24,3 +24,37 @@ const displayHiddenText = (targetText, classSelector, pos) => {
         textField.style.display = "none";
     }
 }
+
+const handleDisplaying = (idName, displayType) => {
+    let e = document.getElementById(idName);
+    e.style.display = displayType;
+}
+
+let enterCount = 0;
+document.addEventListener("keypress", event => {
+
+    let enterPressed = event.key == "Enter";
+
+    if (enterPressed && enterCount == 0) {
+
+        handleDisplaying("blink1", "none")
+        setTimeout(() => {
+            handleDisplaying("hidden1", "block");
+            setTimeout(() => {
+                handleDisplaying("hidden2", "block");
+                setTimeout(() => {
+                    handleDisplaying("hidden3", "block");
+                    setTimeout(() => {
+                        handleDisplaying("hidden4", "block");
+                    }, 500);
+                }, 2000);
+            }, 1000);
+        }, 750);
+
+        enterCount++;
+
+    }
+
+    // console.log(enterCount);
+
+})
