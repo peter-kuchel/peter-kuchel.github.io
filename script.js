@@ -47,8 +47,8 @@ document.addEventListener("keypress", event => {
                     setTimeout(() => {
                         handleDisplaying("hidden4", "block");
                     }, 500);
-                }, 2000);
-            }, 1000);
+                }, 3800);
+            }, 1500);
         }, 750);
 
         enterCount++;
