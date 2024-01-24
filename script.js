@@ -47,7 +47,7 @@ document.addEventListener("keypress", event => {
                     setTimeout(() => {
                         handleDisplaying("hidden4", "block");
                     }, 500);
-                }, 3800);
+                }, 3500);
             }, 1500);
         }, 750);
 
