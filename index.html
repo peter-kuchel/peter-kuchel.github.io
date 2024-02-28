@@ -23,17 +23,17 @@
             </p>
             <p class="intro-msg">peter@main:~$ cd project</p> -->
         <p class="intro-msg">peter@main:~/project$ cat instructions.txt</p>
-        <p class="intro-msg" style="color: #ffffff">press ENTER to compile and run the program :)</p>
+        <p class="intro-msg" style="color: #ffffff">press ENTER to compile and run the program!</p>
         <p class="intro-msg">peter@main:~/project$ make && ./intro_message<span id="blink1" class="blink-hide">█</span>
         </p>
         <div id="hidden1" style="display:none">
-            <p class="intro-msg">gcc -Wall -g -c source/chunk.c -o build/chunk.o</p>
-            <p class="intro-msg">gcc -Wall -g -c source/value.c -o build/value.o</p>
-            <p class="intro-msg">gcc -Wall -g -c source/compiler.c -o build/compiler.o</p>
-            <p class="intro-msg">gcc -Wall -g -c source/vm.c -o build/vm.o</p>
-            <p class="intro-msg">gcc -Wall -g -c source/memory.c -o build/memory.o</p>
-            <p class="intro-msg">gcc -Wall -g -c source/main.c -o build/main.o</p>
-            <p class="intro-msg">gcc -Wall -g -c source/scanner.c -o build/scanner.o</p>
+            <p class="intro-msg">gcc -Wall -Wextra -g -c source/chunk.c -o build/chunk.o</p>
+            <p class="intro-msg">gcc -Wall -Wextra -g -c source/value.c -o build/value.o</p>
+            <p class="intro-msg">gcc -Wall -Wextra -g -c source/compiler.c -o build/compiler.o</p>
+            <p class="intro-msg">gcc -Wall -Wextra -g -c source/vm.c -o build/vm.o</p>
+            <p class="intro-msg">gcc -Wall -Wextra -g -c source/memory.c -o build/memory.o</p>
+            <p class="intro-msg">gcc -Wall -Wextra -g -c source/main.c -o build/main.o</p>
+            <p class="intro-msg">gcc -Wall -Wextra -g -c source/scanner.c -o build/scanner.o</p>
             <p class="intro-msg">gcc ./build/chunk.o ./build/value.o ./build/compiler.o ./build/vm.o </p>
             <p class="intro-msg">&nbsp;./build/memory.o ./build/main.o ./build/scanner.o -o intro_message</p>
             <!-- <p class="intro-msg"></p> -->
@@ -57,8 +57,8 @@
 
     <div class="create-space"></div>
     <div id="nav" class="nav-bar">
-        <span style="color:#ffffff">[</span>
-        <span class="simple-clickable" onclick="scrollToElement('skills');">Skills</span>
+        <!-- <span style="color:#ffffff">[</span>
+        <span class="simple-clickable" onclick="scrollToElement('skills');">Skills</span> -->
         <span style="color:#ffffff">|</span>
         <span class="simple-clickable" onclick="scrollToElement('projects');">Projects</span>
         <span style="color:#ffffff">|</span>
@@ -102,7 +102,7 @@
 
     </div>
     <div class="create-alittle-space"></div>
-    <div id="skills" class="section">
+    <!-- <div id="skills" class="section">
         <h2 class="section-header">{ Summary of Skills }</h2>
         <div>
             <p>
@@ -129,7 +129,7 @@
                 (ClickHouse) (Linux) (Jupyter)
             </p>
         </div>
-    </div>
+    </div> -->
 
     <div id="projects" class="section">
         <h2 class="section-header">{ Projects }</h2>
@@ -265,7 +265,7 @@
             <div class="project-item">
                 <div class="project-brackets">
                     <button class="description-button-toggle "
-                        onclick="displayHiddenText('p3', '.description-button-toggle', 3)"> minserver
+                        onclick="displayHiddenText('p3', '.description-button-toggle', 3)"> CLI - tools
                         <span class="project-type">::</span>
                         <span> PersonalProject</span>
                         <span class="button-arrow" style="color: #ffffff">▼</span>
@@ -274,28 +274,22 @@
                 <div id="p3" style="display: none">
                     <div class="project-tag">
                         <div></div>
-                        <span class="tag">node.js</span>
-                        <span class="tag">JavaScript</span>
+                        <span class="tag">C</span>
+                        <!-- <span class="tag">JavaScript</span> -->
 
                     </div>
                     <strong>Description:</strong>
                     <p>
-                        minserver is a minimal http server I built using the http library in node.js to host static
-                        websites to easily test websites or for general hosting. It can handle requests from the browser
-                        for
-                        CSS and JavaScript files, along with other MIME types (however it doesn't handle everything). I
-                        needed to create a simple http webserver server in-order to actually test out this website,
-                        which was hosting using an IPv6 address.
+                        A collection of cli-tools made using C (for now) to learn about areas I'm unfamiliar with and to
+                        gain a
+                        better
+                        understanding of how some existing CLI tools work.
                     </p>
                     <p>
-                        The server should primarily be used for testing or hosting simple static sites. For other needs
-                        there exists better options.
-                    </p>
-                    <p>
-                        I plan on making the repository public soon, although for the moment it is private. However, if
-                        you would like more details, please don't
-                        hesistate
-                        in reaching out to me, contact information can be found in the <strong>Contact</strong> section.
+                        The project can be found here: <a span class="simple-clickable no-underline"
+                            href="https://github.com/peter-kuchel/cli-tools">
+                            {§}
+                        </a> on Github
                     </p>
                 </div>
             </div>
@@ -425,7 +419,7 @@
                 </div>
             </div>
 
-            <div class="project-item">
+            <!-- <div class="project-item">
                 <div class="project-brackets">
                     <button class="description-button-toggle "
                         onclick="displayHiddenText('p8', '.description-button-toggle', 8)"> Selenium WebScraping
@@ -444,7 +438,7 @@
                         works, but check back soon!)
                     </p>
                 </div>
-            </div>
+            </div> -->
 
 
         </div>
