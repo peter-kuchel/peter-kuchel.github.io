@@ -61,7 +61,7 @@
             <!-- <span style="color:#ffffff">[</span>
         <span class="simple-clickable" onclick="scrollToElement('skills');">Skills</span> -->
             <span style="color:#ffffff">[</span>
-            <span class="simple-clickable" onclick="scrollToElement('classes-taken');">Skills</span>
+            <span class="simple-clickable" onclick="scrollToElement('skills');">Skills</span>
             <span style="color:#ffffff">|</span>
             <span class="simple-clickable" onclick="scrollToElement('projects');">Projects</span>
             <span style="color:#ffffff">|</span>
@@ -135,522 +135,377 @@
         </div>
     </div> -->
         <div id="skills" class="section">
+            <div class="skills-container">
+                <h2 class="section-header">{ Skills }</h2>
+                <div class="skill">
+                    <div class="skill-name">Python</div>
+                    <div class="skill-bar">
+                        <div class="skill-percentage" style="width: 86%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Haskell</div>
+                    <div class="skill-bar">
+                        <div class="skill-percentage" style="width: 62%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">C/C++</div>
+                    <div class="skill-bar">
+                        <div class="skill-percentage" style="width: 66%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Julia</div>
+                    <div class="skill-bar">
+                        <div class="skill-percentage" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">SQL</div>
+                    <div class="skill-bar">
+                        <div class="skill-percentage" style="width: 72%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Linux</div>
+                    <div class="skill-bar">
+                        <div class="skill-percentage" style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Git/Github</div>
+                    <div class="skill-bar">
+                        <div class="skill-percentage" style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">PostgreSQL</div>
+                    <div class="skill-bar">
+                        <div class="skill-percentage" style="width: 69%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Java</div>
+                    <div class="skill-bar">
+                        <div class="skill-percentage" style="width: 81%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">JS / TS</div>
+                    <div class="skill-bar">
+                        <div class="skill-percentage" style="width: 71%;"></div>
+                    </div>
+                </div>
+                <!-- Add more skills here -->
+            </div>
 
+            <!-- Add more skills here -->
         </div>
+    </div>
 
-        <div id="projects" class="section">
-            <h2 class="section-header">{ Projects }</h2>
-            <div class="projects-container">
-                <div class="project-item">
-                    <div class="project-brackets">
-                        <button class="description-button-toggle "
-                            onclick="displayHiddenText('p0', '.description-button-toggle', 0)">Ethereum Research
-                            Database
-                            <span class="project-type">::</span>
-                            <span> WorkProject</span>
-                            <span class="button-arrow" style="color: #ffffff">▼</span>
-                        </button>
-                    </div>
-                    <div id="p0" style="display: none">
-                        <div class="project-tag">
-                            <div></div>
-                            <span class="tag">Julia</span>
-                            <span class="tag">SQL</span>
-                            <span class="tag">PostgreSQL</span>
-
-                        </div>
-                        <strong>Description:</strong>
-                        <p>
-
-                            Designed and developed a database and background service to manage and insert decentralized
-                            finance data
-                            into an extensive research database using Julia and PostgreSQL, which handles over 4
-                            billion+ rows stored
-                            across multiple tables. Completed while as a research assistant for Dr. Alfred Lehar at the
-                            University of Calgary. To view other work I did as a research assistant, please feel free to
-                            check out my resume in the <strong>Documents</strong> section.
-                        </p>
-                        <p>
-                            This project is currently in a private repository, if you would like more details, please
-                            don't
-                            hesistate
-                            in reaching out to me, contact information can be found in the <strong>Contact</strong>
-                            section.
-                        </p>
-                    </div>
+    <div id="projects" class="section">
+        <h2 class="section-header">{ Projects }</h2>
+        <div class="projects-container">
+            <div class="project-item">
+                <div class="project-brackets">
+                    <button class="description-button-toggle "
+                        onclick="displayHiddenText('p0', '.description-button-toggle', 0)">Ethereum Research
+                        Database
+                        <span class="project-type">::</span>
+                        <span> WorkProject</span>
+                        <span class="button-arrow" style="color: #ffffff">▼</span>
+                    </button>
                 </div>
+                <div id="p0" style="display: none">
+                    <div class="project-tag">
+                        <div></div>
+                        <span class="tag">Julia</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">PostgreSQL</span>
 
-                <div class="project-item">
-                    <div class="project-brackets">
-                        <button class="description-button-toggle "
-                            onclick="displayHiddenText('p1', '.description-button-toggle', 1)"> Find My Ride
-                            <span class="project-type">::</span>
-                            <span> CourseProject</span>
-                            <span class="button-arrow" style="color: #ffffff">▼</span>
-                        </button>
                     </div>
-                    <div id="p1" style="display: none">
-                        <div class="project-tag">
-                            <div></div>
-                            <span class="tag">Python</span>
-                            <span class="tag">SQL</span>
-                            <span class="tag">PostgreSQL</span>
-                        </div>
-                        <p>
-                            Working with 2 partners, we created a full stack application called Find My Ride.
-                            The app is a tool that can aid in checking if a stolen vehicle is being resold on popular
-                            buy-&-sell websites such as Kijiji, by using a detailed description of the vehicle by the
-                            user
-                            to
-                            help find it from listings that have been scraped from these websites. The app has a
-                            dedicated
-                            scraper which actively scrapes new listings as they appear on the sites. This was our final
-                            project submission for CPSC 471 [Data Base Management Systems]
-                        </p>
-                        <p>
-                            The project can be found here: <a span class="simple-clickable no-underline"
-                                href="https://github.com/jaza-k/find-my-ride">
-                                {§}
-                            </a> on Github
-                        </p>
-                    </div>
+                    <strong>Description:</strong>
+                    <p>
+
+                        Designed and developed a database and background service to manage and insert decentralized
+                        finance data
+                        into an extensive research database using Julia and PostgreSQL, which handles over 4
+                        billion+ rows stored
+                        across multiple tables. Completed while as a research assistant for Dr. Alfred Lehar at the
+                        University of Calgary. To view other work I did as a research assistant, please feel free to
+                        check out my resume in the <strong>Documents</strong> section.
+                    </p>
+                    <p>
+                        This project is currently in a private repository, if you would like more details, please
+                        don't
+                        hesistate
+                        in reaching out to me, contact information can be found in the <strong>Contact</strong>
+                        section.
+                    </p>
                 </div>
+            </div>
 
-                <div class="project-item">
-                    <div class="project-brackets">
-                        <button class="description-button-toggle "
-                            onclick="displayHiddenText('p2', '.description-button-toggle', 2)"> Naïve DEX Arbitrage
-                            Trading
-                            Bot
-                            <span class="project-type">::</span>
-                            <span> CourseProject</span>
-                            <span class="button-arrow" style="color: #ffffff">▼</span>
-                        </button>
-                    </div>
-                    <div id="p2" style="display: none">
-                        <div class="project-tag">
-                            <div></div>
-                            <span class="tag">Julia</span>
-                            <span class="tag">Solidity</span>
-
-                        </div>
-                        <strong>Description:</strong>
-                        <p>
-                            Working with a partner, we designed and developed a naïve arbitrage trading bot that would
-                            search for and attempt to execute profitable opportunities between multiple decentralized
-                            exchanges (DEXes) on the Ethereum network as part of the FNCE 559 (Decentralized Finance)
-                            final
-                            group project
-                        </p>
-                        <!-- <p>
-                            We designed the system architecture to be implemented 'off-chain', the strategy for finding
-                            profitable trades, and the smart contract architecture which would be implemented
-                            'on-chain'.
-                            The project was implemented
-                            in julia and solidity, where soldity is a high-level language for developing smart contracts
-                            on
-                            the
-                            Ethereum blockchain.
-                        </p> -->
-                        <p>
-                            This project is currently in a private repository, if you would like more details, please
-                            don't
-                            hesistate
-                            in reaching out to me, contact information can be found in the <strong>Contact</strong>
-                            section.
-                        </p>
-                    </div>
+            <div class="project-item">
+                <div class="project-brackets">
+                    <button class="description-button-toggle "
+                        onclick="displayHiddenText('p1', '.description-button-toggle', 1)"> Find My Ride
+                        <span class="project-type">::</span>
+                        <span> CourseProject</span>
+                        <span class="button-arrow" style="color: #ffffff">▼</span>
+                    </button>
                 </div>
-
-                <div class="project-item">
-                    <div class="project-brackets">
-                        <button class="description-button-toggle "
-                            onclick="displayHiddenText('p3', '.description-button-toggle', 3)"> CLI - tools
-                            <span class="project-type">::</span>
-                            <span> PersonalProject</span>
-                            <span class="button-arrow" style="color: #ffffff">▼</span>
-                        </button>
+                <div id="p1" style="display: none">
+                    <div class="project-tag">
+                        <div></div>
+                        <span class="tag">Python</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">PostgreSQL</span>
                     </div>
-                    <div id="p3" style="display: none">
-                        <div class="project-tag">
-                            <div></div>
-                            <span class="tag">C</span>
-                            <!-- <span class="tag">JavaScript</span> -->
-
-                        </div>
-                        <strong>Description:</strong>
-                        <p>
-                            A collection of cli-tools made using C (for now) to learn about areas I'm unfamiliar with
-                            and to
-                            gain a
-                            better
-                            understanding of how some existing CLI tools work.
-                        </p>
-                        <p>
-                            The project can be found here: <a span class="simple-clickable no-underline"
-                                href="https://github.com/peter-kuchel/cli-tools">
-                                {§}
-                            </a> on Github
-                        </p>
-                    </div>
+                    <p>
+                        Working with 2 partners, we created a full stack application called Find My Ride.
+                        The app is a tool that can aid in checking if a stolen vehicle is being resold on popular
+                        buy-&-sell websites such as Kijiji, by using a detailed description of the vehicle by the
+                        user
+                        to
+                        help find it from listings that have been scraped from these websites. The app has a
+                        dedicated
+                        scraper which actively scrapes new listings as they appear on the sites. This was our final
+                        project submission for CPSC 471 [Data Base Management Systems]
+                    </p>
+                    <p>
+                        The project can be found here: <a span class="simple-clickable no-underline"
+                            href="https://github.com/jaza-k/find-my-ride">
+                            {§}
+                        </a> on Github
+                    </p>
                 </div>
+            </div>
 
-                <div class="project-item">
-                    <div class="project-brackets">
-                        <button class="description-button-toggle "
-                            onclick="displayHiddenText('p4', '.description-button-toggle', 4)"> AI Scheduler System
-                            <span class="project-type">::</span>
-                            <span> CourseProject</span>
-                            <span class="button-arrow" style="color: #ffffff">▼</span>
-                        </button>
-                    </div>
-                    <div id="p4" style="display: none">
-                        <div class="project-tag">
-                            <div></div>
-                            <span class="tag">Java</span>
-                        </div>
-                        <strong>Description:</strong>
-                        <p>
-                            As a team of 4, we developed an AI Scheduler System which uses
-                            genetic set-based search and an or-tree search to build a schedule from a list of
-                            contrainsts and dates. Completed as part of a
-                            the
-                            final project for CPSC 443: Artificial
-                            Intelligence.
-                        </p>
-                        <p>
-                            This project is currently in a private repository, if you would like more details, please
-                            don't
-                            hesistate
-                            in reaching out to me, contact information can be found in the <strong>Contact</strong>
-                            section.
-                        </p>
-                    </div>
+            <div class="project-item">
+                <div class="project-brackets">
+                    <button class="description-button-toggle "
+                        onclick="displayHiddenText('p2', '.description-button-toggle', 2)"> Naïve DEX Arbitrage
+                        Trading
+                        Bot
+                        <span class="project-type">::</span>
+                        <span> CourseProject</span>
+                        <span class="button-arrow" style="color: #ffffff">▼</span>
+                    </button>
                 </div>
+                <div id="p2" style="display: none">
+                    <div class="project-tag">
+                        <div></div>
+                        <span class="tag">Julia</span>
+                        <span class="tag">Solidity</span>
 
-                <div class="project-item">
-                    <div class="project-brackets">
-                        <button class="description-button-toggle "
-                            onclick="displayHiddenText('p5', '.description-button-toggle', 5)"> Raspberry Pi SNES Game
-                            <span class="project-type">::</span>
-                            <span> CourseProject</span>
-                            <span class="button-arrow" style="color: #ffffff">▼</span>
-                        </button>
                     </div>
-                    <div id="p5" style="display: none">
-                        <div class="project-tag">
-                            <div></div>
-                            <span class="tag">C</span>
-                        </div>
-                        <strong>Description:</strong>
-                        <p>
-                            Working with a partner, we developed a video game that runs on a Raspberry Pi, which is
-                            playable
-                            using a SNES controller and developed using the C programming language, as part
-                            of an assignment for the course CPSC 359 (Computing Machinery II).
-                        </p>
-                        <p>
-                            This project is currently in a private repository, if you would like more details, please
-                            don't
-                            hesistate
-                            in reaching out to me, contact information can be found in the <strong>Contact</strong>
-                            section.
-                        </p>
-                    </div>
+                    <strong>Description:</strong>
+                    <p>
+                        Working with a partner, we designed and developed a naïve arbitrage trading bot that would
+                        search for and attempt to execute profitable opportunities between multiple decentralized
+                        exchanges (DEXes) on the Ethereum network as part of the FNCE 559 (Decentralized Finance)
+                        final
+                        group project
+                    </p>
+                    <p>
+                        This project is currently in a private repository, if you would like more details, please
+                        don't
+                        hesistate
+                        in reaching out to me, contact information can be found in the <strong>Contact</strong>
+                        section.
+                    </p>
                 </div>
+            </div>
 
-                <div class="project-item">
-                    <div class="project-brackets">
-                        <button class="description-button-toggle "
-                            onclick="displayHiddenText('p6', '.description-button-toggle', 6)"> Monte Carlo VaR & CVaR
-                            <span class="project-type">::</span>
-                            <span> PersonalProject</span>
-                            <span class="button-arrow" style="color: #ffffff">▼</span>
-                        </button>
+            <div class="project-item">
+                <div class="project-brackets">
+                    <button class="description-button-toggle "
+                        onclick="displayHiddenText('p3', '.description-button-toggle', 3)"> CLI - tools
+                        <span class="project-type">::</span>
+                        <span> PersonalProject</span>
+                        <span class="button-arrow" style="color: #ffffff">▼</span>
+                    </button>
+                </div>
+                <div id="p3" style="display: none">
+                    <div class="project-tag">
+                        <div></div>
+                        <span class="tag">C</span>
+                        <!-- <span class="tag">JavaScript</span> -->
+
                     </div>
-                    <div id="p6" style="display: none">
-                        <div class="project-tag">
-                            <div></div>
-                            <span class="tag">Python</span>
-                        </div>
-                        <strong>Description:</strong>
-                        <p>
-                            <!--                         I programmed a Monte Carlo model to calculate VaR and CVaR for a given portfolio of stocks using
+                    <strong>Description:</strong>
+                    <p>
+                        A collection of cli-tools made using C (for now) to learn about areas I'm unfamiliar with
+                        and to
+                        gain a
+                        better
+                        understanding of how some existing CLI tools work.
+                    </p>
+                    <p>
+                        The project can be found here: <a span class="simple-clickable no-underline"
+                            href="https://github.com/peter-kuchel/cli-tools">
+                            {§}
+                        </a> on Github
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-brackets">
+                    <button class="description-button-toggle "
+                        onclick="displayHiddenText('p4', '.description-button-toggle', 4)"> AI Scheduler System
+                        <span class="project-type">::</span>
+                        <span> CourseProject</span>
+                        <span class="button-arrow" style="color: #ffffff">▼</span>
+                    </button>
+                </div>
+                <div id="p4" style="display: none">
+                    <div class="project-tag">
+                        <div></div>
+                        <span class="tag">Java</span>
+                    </div>
+                    <strong>Description:</strong>
+                    <p>
+                        As a team of 4, we developed an AI Scheduler System which uses
+                        genetic set-based search and an or-tree search to build a schedule from a list of
+                        contrainsts and dates. Completed as part of a
+                        the
+                        final project for CPSC 443: Artificial
+                        Intelligence.
+                    </p>
+                    <p>
+                        This project is currently in a private repository, if you would like more details, please
+                        don't
+                        hesistate
+                        in reaching out to me, contact information can be found in the <strong>Contact</strong>
+                        section.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-brackets">
+                    <button class="description-button-toggle "
+                        onclick="displayHiddenText('p5', '.description-button-toggle', 5)"> Raspberry Pi SNES Game
+                        <span class="project-type">::</span>
+                        <span> CourseProject</span>
+                        <span class="button-arrow" style="color: #ffffff">▼</span>
+                    </button>
+                </div>
+                <div id="p5" style="display: none">
+                    <div class="project-tag">
+                        <div></div>
+                        <span class="tag">C</span>
+                    </div>
+                    <strong>Description:</strong>
+                    <p>
+                        Working with a partner, we developed a video game that runs on a Raspberry Pi, which is
+                        playable
+                        using a SNES controller and developed using the C programming language, as part
+                        of an assignment for the course CPSC 359 (Computing Machinery II).
+                    </p>
+                    <p>
+                        This project is currently in a private repository, if you would like more details, please
+                        don't
+                        hesistate
+                        in reaching out to me, contact information can be found in the <strong>Contact</strong>
+                        section.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-brackets">
+                    <button class="description-button-toggle "
+                        onclick="displayHiddenText('p6', '.description-button-toggle', 6)"> Monte Carlo VaR & CVaR
+                        <span class="project-type">::</span>
+                        <span> PersonalProject</span>
+                        <span class="button-arrow" style="color: #ffffff">▼</span>
+                    </button>
+                </div>
+                <div id="p6" style="display: none">
+                    <div class="project-tag">
+                        <div></div>
+                        <span class="tag">Python</span>
+                    </div>
+                    <strong>Description:</strong>
+                    <p>
+                        <!--                         I programmed a Monte Carlo model to calculate VaR and CVaR for a given portfolio of stocks using
                         Python -->
-                            I created a program to calculate the VaR and CVaR for a given portfolio using a Monte Carlo
-                            model. The model uses a linear congruential generator to generate pseudo random numbers, and
-                            makes use of brownian motion to simulate returns. The program was written in Python.
-                        </p>
-                        <p>
-                            The project can be found here: <a span class="simple-clickable no-underline"
-                                href="https://gitlab.com/peter.kuchel/finance-projects/-/tree/master/MonteCarloVar">
-                                {§}
-                            </a> on Gitlab
-                        </p>
-                    </div>
+                        I created a program to calculate the VaR and CVaR for a given portfolio using a Monte Carlo
+                        model. The model uses a linear congruential generator to generate pseudo random numbers, and
+                        makes use of brownian motion to simulate returns. The program was written in Python.
+                    </p>
+                    <p>
+                        The project can be found here: <a span class="simple-clickable no-underline"
+                            href="https://gitlab.com/peter.kuchel/finance-projects/-/tree/master/MonteCarloVar">
+                            {§}
+                        </a> on Gitlab
+                    </p>
                 </div>
+            </div>
 
-                <div class="project-item">
-                    <div class="project-brackets">
-                        <button class="description-button-toggle "
-                            onclick="displayHiddenText('p7', '.description-button-toggle', 7)"> Tweet Collector
-                            <span class="project-type">::</span>
-                            <span> WorkProject</span>
-                            <span class="button-arrow" style="color: #ffffff">▼</span>
-                        </button>
-                    </div>
-                    <div id="p7" style="display: none">
-                        <div class="project-tag">
-                            <div></div>
-                            <span class="tag">Python</span>
-                        </div>
-                        <p class="project-tag">
-                            I helped a master student in the Department of Sociology at the University of Calgary with
-                            her
-                            thesis, by helping her collect Tweets with specific hashtags she needed to analyze.
-                            With a restriction of 250 requests to the Twitter API, I helped her maximize the number of
-                            Tweets she needed to gather for a list of specific hashtags, and pulled ~35,000 Tweets from
-                            the
-                            API.
-                        </p>
-                        <p>
-                            The project can be found here: <a span class="simple-clickable no-underline"
-                                href="https://gitlab.com/peter.kuchel/twitter-api-pull">
-                                {§}
-                            </a> on Gitlab
-                        </p>
-                    </div>
+            <div class="project-item">
+                <div class="project-brackets">
+                    <button class="description-button-toggle "
+                        onclick="displayHiddenText('p7', '.description-button-toggle', 7)"> Tweet Collector
+                        <span class="project-type">::</span>
+                        <span> WorkProject</span>
+                        <span class="button-arrow" style="color: #ffffff">▼</span>
+                    </button>
                 </div>
-
+                <div id="p7" style="display: none">
+                    <div class="project-tag">
+                        <div></div>
+                        <span class="tag">Python</span>
+                    </div>
+                    <p class="project-tag">
+                        I helped a master student in the Department of Sociology at the University of Calgary with
+                        her
+                        thesis, by helping her collect Tweets with specific hashtags she needed to analyze.
+                        With a restriction of 250 requests to the Twitter API, I helped her maximize the number of
+                        Tweets she needed to gather for a list of specific hashtags, and pulled ~35,000 Tweets from
+                        the
+                        API.
+                    </p>
+                    <p>
+                        The project can be found here: <a span class="simple-clickable no-underline"
+                            href="https://gitlab.com/peter.kuchel/twitter-api-pull">
+                            {§}
+                        </a> on Gitlab
+                    </p>
+                </div>
             </div>
 
         </div>
 
-        <!-- <div id="classes-taken" class="section">
-        <h2 class="section-header">{ Noteworthy Courses Taken }</h2>
-        <div class="course-button-container">
+    </div>
 
-            <button class="course-button-toggle" onclick="displayHiddenText('c0', '.course-button-toggle', 0);">
-                CPSC 418 - Introduction to Cryptography<span class="button-arrow">▼</span>
-            </button>
-            <div id="c0" style="display: none;">
-                <p>
-                    <strong class="green-color">Main Takeaway:</strong> The math is hard to decipher
-                </p>
-                <p>
-                    <strong class="green-color">Course Description & Learning Outcomes:</strong>
-                    The course covered the fundamentals of and the current best practices in cryptography, with an
-                    emphasis on attaining well-defined and practical notations of security. Covering cryptographic
-                    primatives, encryption algorithms, foundational mathematical theorems, symmetric key cryptography,
-                    public key cryptography,
-                    key exchanges and
-                    management, mechanisms for data integrity, use of cryptography in modern applications, and more.
-                </p>
-                <p>
-                    The course included assignments which gave us the
-                    opportunity to implement cryptography using Python which was incredibly useful in understanding the
-                    mechanisms at work. Assignments included creating an encryption algorithm, implementing a version of
-                    the Kerberos protocol, and implementing a QR ticket application.
-                </p>
-            </div>
+    <div id="documents" class="section">
+        <h2 class="section-header">{ Documents }</h2>
+        <a class="simple-clickable no-underline" href="/documents/Resume_Peter_Kuchel.pdf" target="_blank">*(Resume)</a>
+        <div></div>
+        <a class="simple-clickable no-underline" href="/documents/Unofficial_Transcript_2023_Final_Peter_Kuchel.pdf"
+            target="_blank">*(Unofficial
+            Transcript)</a>
+    </div>
 
-            <button class="course-button-toggle" onclick="displayHiddenText('c1', '.course-button-toggle', 1);">
-                CPSC 433 - Artificial Intelligence<span class="button-arrow">▼</span>
-            </button>
-            <div id="c1" style="display: none;">
-                <p>
-                    <strong class="green-color">Main Takeaway:</strong> AI isn't taking my job yet
-                </p>
-                <p>
-                    <strong class="green-color">Course Description & Learning Outcomes:</strong> An introduction to
-                    artificial intelligence
-                    which covered search
-                    models (set based search , or-tree based search, and-tree based search), search algorithms (minimax,
-                    alpha-beta pruning), search controls, knowledge
-                    representation, neural networks (perceptron, CNNs, RNNs, techniques), the History of
-                    AI development, biases with AI, along with ethical considerations with AI.
-                </p>
-                <p>
-                    The final project for this class, which was to implement an AI scheduler builder in a group of 3-5.
-                    The project consisted of first defining the model, and then implementing it in a programming
-                    language of our choice.
-                    More information on the project can be found in the project section.
-                </p>
-            </div>
+    <div id="contact" class="section">
+        <h2 class="section-header">{ Contact }</h2>
+        <p>petermichaelkuchel@gmail.com</p>
+        <!-- <p>Email: peter.kuchel@ucalgary.ca <span style="color: #07ef7b">||</span> petermichaelkuchel@gmail.com</p> -->
+        <p>-/E|-<span><a class="simple-clickable no-underline"
+                    href="https://github.com/peter-kuchel">-{GitHub}-</a></span>-<span><a
+                    href="https://gitlab.com/peter.kuchel"
+                    class="simple-clickable no-underline">-{GitLab}-</a></span>-<span><a
+                    class="simple-clickable no-underline"
+                    href="https://www.linkedin.com/in/peter-kuchel/">-{LinkedIn}-</a></span>-|Ǝ\-</p>
+    </div>
 
-
-            <button class="course-button-toggle" onclick="displayHiddenText('c2', '.course-button-toggle', 2);">
-                CPSC 521 - Foundations of Functional Programming<span class="button-arrow">▼</span>
-            </button>
-            <div id="c2" style="display: none;">
-                <p>
-                    <strong class="green-color">Main Takeaway:</strong> A monad is just a monoid in the category of
-                    endofunctors.
-                </p>
-                <p>
-                    <strong class="green-color">Course Description & Learning Outcomes:</strong> The second functional
-                    paradigm class after
-                    the introduction
-                    class, with a focus on the theoretical foundations of functional programming. This course covered
-                    lambda calculus, beta-reduction, confluence, reduction strategies, recursion patterns, parsing,
-                    unification and useful combinators to name some of the topics.
-                </p>
-                <p>
-                    All the assignments in this course were done using Haskell. Which covered doing problems in Haskell,
-                    implementing and using the state monad to perform lambda lifting, implementing a simplified CES
-                    machine, and implementing a type inferencer for typed lambda calculus.
-                </p>
-            </div>
-
-            <button class="course-button-toggle" onclick="displayHiddenText('c3', '.course-button-toggle', 3);">
-                CPSC 525 - Principles of Computer Security<span class="button-arrow">▼</span>
-            </button>
-            <div id="c3" style="display: none;">
-                <p>
-                    <strong class="green-color">Main Takeaway:</strong> I have no idea how computers *actually* work.
-                </p>
-                <p>
-                    <strong class="green-color">Course Description & Learning Outcomes:</strong> The course covered a
-                    variety of topics,
-                    from classic
-                    vulnerabilities such as buffer overflows, format strings, TOCTOU, and more, along with exercises to
-                    develop deeper understanding. Case studies such as
-                    famous vulnerabilities and their widespread consequences such as the Heartbleed bug,
-                    were covered. Reading blog posts on current issue in the security space was a large part of the
-                    course as well. Ethical and legal considerations were also introduced.
-                </p>
-                <p>
-                    This course had what was
-                    probably the
-                    hardest and most enjoyable assignment I have ever done. Which was to exploit
-                    multiple vulnerable C programs on a server, using information we had learned in class.
-                    This course made me realize I had no idea how computers actually work, and I'm glad, because now I
-                    can learn how they really work.
-                </p>
-            </div>
-
-            <button class="course-button-toggle" onclick="displayHiddenText('c4', '.course-button-toggle', 4);">
-                ECON 395 - Introduction to Econometrics<span class="button-arrow">▼</span>
-            </button>
-            <div id="c4" style="display: none;">
-                <p>
-                    <strong class="green-color">Main Takeaways:</strong> Econometrics? You mean, linear regression?
-                </p>
-                <p>
-                    <strong class="green-color">Course Description & Learning Outcomes:</strong> The course introduced,
-                    developed, and
-                    evaluated two variable
-                    and multi-variable linear regression. It also covered assumptions for regression models (SLR, MLR,
-                    and CLR), unbiased and biased estimators, testing economic hypotheses, and model specification and
-                    evaluation.
-                </p>
-                <p>
-                    The course was a great way to finish off my
-                    degree, by providing
-                    a good review of statistics and regression in general. The course had assignments and tutorials
-                    using
-                    Jupyter notebooks which was a good blend of using regression and Python.
-                </p>
-            </div>
-
-            <button class="course-button-toggle" onclick="displayHiddenText('c5', '.course-button-toggle', 5);">
-                FNCE 445 - Options and Derivatives<span class="button-arrow">▼</span>
-            </button>
-            <div id="c5" style="display: none;">
-                <p>
-                    <strong class="green-color">Main Takeaway:</strong> Making money is optional
-                </p>
-                <p>
-                    <strong class="green-color">Course Description & Learning Outcomes:</strong> An extensive
-                    introduction to derivatives
-                    contracts, the
-                    valuation of derivatives securities, and how derivatives markets operate. Types of derivatives
-                    looked at
-                    included forwards and futures, options, FX and interest rate swaps, along with others.
-                </p>
-                <p>
-                    One of the components of the course was to compete in an options
-                    trading simulator competition hosted by TMX Montréal Exchange, which allowed me to apply the
-                    material and formulas introduced in the class in a trading setting, deepening the understanding
-                    behind the decomposition of options.
-                </p>
-
-            </div>
-
-            <button class="course-button-toggle" onclick="displayHiddenText('c6', '.course-button-toggle', 6);">
-                FNCE 467 - Financial Risk Management<span class="button-arrow">▼</span>
-            </button>
-            <div id="c6" style="display: none;">
-                <p>
-                    <strong class="green-color">Main Takeaways:</strong> Don't risk it for the biscuit
-                </p>
-                <p>
-                    <strong class="green-color">Course Description & Learning Outcomes:</strong> The course provided a
-                    framework for
-                    evaluating financial risks,
-                    and managing them by using financial products such as securities and derivaties. The course covered
-                    types of risk, such as market risk, interest rate risk, liquidity risk, and credit risk. Hedging
-                    strategies such as optimal hedging, static and dynamic hedging. Included the covering
-                    of risk assessment tools, firm valuation with risk management, and testing financial models.
-                </p>
-                <p>
-                    The course also included a large group report, where as a group we analyzed the risk exposures and
-                    mitigation strategies of a large Canadian company. In our case we chose CP Rail.
-                </p>
-            </div>
-
-            <button class="course-button-toggle" onclick="displayHiddenText('c7', '.course-button-toggle', 7);">
-                FNCE 559 - Decentralized Finance <span class="button-arrow">▼</span>
-            </button>
-            <div id="c7" style="display: none;">
-                <p>
-                    <strong class="green-color">Main Takeaways:</strong> The blockchain never lies (when it comes to me
-                    losing money)
-                </p>
-                <p>
-                    <strong class="green-color">Course Description & Learning Outcomes:</strong> The course introducted
-                    decentralized finance, which is the design and application of financial instruments and services
-                    without relying on traditionally 'centralized' intermediaries, implemented through smart contracts
-                    on a blockchain, the most popular being Ethereum.
-                    The course covered the Bitcoin and Ethereum blockchains, smart contracts, Automated Market Makers
-                    and Decentralized Exchanges, Lending Protocols, Flash Loans, MEV (Maximal or Miner Extractable
-                    Value), Arbitrage Strategies, and more to name a few.
-                </p>
-                <p>
-                    All of the assignments were done using Julia, and were heavy data science-esque projects that
-                    required analyzing large amounts of blockchain data. The final project for the class was a group
-                    project, with more information about it available in the Projects section.
-                </p>
-            </div>
-
-        </div>
-    </div> -->
-
-        <div id="documents" class="section">
-            <h2 class="section-header">{ Documents }</h2>
-            <a class="simple-clickable no-underline" href="/documents/Resume_Peter_Kuchel.pdf"
-                target="_blank">*(Resume)</a>
-            <div></div>
-            <a class="simple-clickable no-underline" href="/documents/Unofficial_Transcript_2023_Final_Peter_Kuchel.pdf"
-                target="_blank">*(Unofficial
-                Transcript)</a>
-        </div>
-
-        <div id="contact" class="section">
-            <h2 class="section-header">{ Contact }</h2>
-            <p>petermichaelkuchel@gmail.com</p>
-            <!-- <p>Email: peter.kuchel@ucalgary.ca <span style="color: #07ef7b">||</span> petermichaelkuchel@gmail.com</p> -->
-            <p>-/E|-<span><a class="simple-clickable no-underline"
-                        href="https://github.com/peter-kuchel">-{GitHub}-</a></span>-<span><a
-                        href="https://gitlab.com/peter.kuchel"
-                        class="simple-clickable no-underline">-{GitLab}-</a></span>-<span><a
-                        class="simple-clickable no-underline"
-                        href="https://www.linkedin.com/in/peter-kuchel/">-{LinkedIn}-</a></span>-|Ǝ\-</p>
-        </div>
-
-        <div class="section">
-            <p class="simple-clickable" onclick="scrollToElement('nav');"> [ Back to top ] </p>
-        </div>
+    <div class="section">
+        <p class="simple-clickable" onclick="scrollToElement('nav');"> [ Back to top ] </p>
+    </div>
     </div>
 </body>
 
