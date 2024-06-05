@@ -47,8 +47,8 @@
     <div class="center-everything">
         <div id="nav" class="nav-bar">
             <span style="color:#ffffff">[</span>
-            <span class="simple-clickable" onclick="scrollToElement('skills');">Skills</span>
-            <span style="color:#ffffff">|</span>
+            <!-- <span class="simple-clickable" onclick="scrollToElement('skills');">Skills</span>
+            <span style="color:#ffffff">|</span> -->
             <span class="simple-clickable" onclick="scrollToElement('projects');">Projects</span>
             <span style="color:#ffffff">|</span>
             <span class="simple-clickable" onclick="scrollToElement('documents');">Documents</span>
@@ -69,16 +69,16 @@
                 </p>
                 <p>
                     I am interested in a wide variety of topics, as of right now, I am
-                    actively learning more about Low Level Programming, Computer Networks, and Data Mining. Currently I
-                    am
-                    also working through 'Crafting Interpreters'. When I'm not focused on something thats got my
+                    actively learning more about Low Level Programming, Computer Networks, and Data Mining. When I'm not
+                    focused on something thats got my
                     attention,
-                    I enjoy reading (and
-                    probably over-indulging in Wikipedia), bouldering, hiking, spending time with friends, and
-                    trying new
-                    things.
-
+                    I enjoy reading (and probably over-indulging in Wikipedia), bouldering, hiking, spending time with
+                    friends, and
+                    trying new things.
                 </p>
+                <!-- Currently I
+                    am
+                    also working through 'Crafting Interpreters' -->
                 <p>
                     A copy of my <span style="color:#07ef7b">resume</span> can be found in the
                     <strong>Documents</strong>
@@ -91,14 +91,8 @@
 
         </div>
         <div class="create-alittle-space"></div>
-        <!--
-        ] (NumPy) (Pandas)
-            
-                (Selenium) (TensorFlow)
-                (ClickHouse) (Jupyter)
-          
-    </div> -->
-        <div id="skills" class="section">
+
+        <!-- <div id="skills" class="section">
             <div class="skills-container">
                 <h2 class="section-header">{ Skills }</h2>
                 <div class="skill">
@@ -163,310 +157,311 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <div class="create-alittle-space"></div>
-    <div id="projects" class="section">
-        <h2 class="section-header">{ Projects }</h2>
-        <div class="projects-container">
-            <div class="project-item">
-                <div class="project-brackets">
-                    <button class="description-button-toggle "
-                        onclick="displayHiddenText('p0', '.description-button-toggle', 0)">Ethereum Research
-                        Database
-                        <span class="project-type">::</span>
-                        <span> WorkProject</span>
-                        <span class="button-arrow" style="color: #ffffff">▼</span>
-                    </button>
-                </div>
-                <div id="p0" style="display: none">
-                    <div class="project-tag">
-                        <div></div>
-                        <span class="tag">Julia</span>
-                        <span class="tag">SQL</span>
-                        <span class="tag">PostgreSQL</span>
-
+        <div class="create-alittle-space"></div>
+        <div id="projects" class="section">
+            <h2 class="section-header">{ Projects }</h2>
+            <div class="projects-container">
+                <div class="project-item">
+                    <div class="project-brackets">
+                        <button class="description-button-toggle "
+                            onclick="displayHiddenText('p0', '.description-button-toggle', 0)">Ethereum Research
+                            Database
+                            <span class="project-type">::</span>
+                            <span> WorkProject</span>
+                            <span class="button-arrow" style="color: #ffffff">▼</span>
+                        </button>
                     </div>
-                    <strong>Description:</strong>
-                    <p>
+                    <div id="p0" style="display: none">
+                        <div class="project-tag">
+                            <div></div>
+                            <span class="tag">Julia</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">PostgreSQL</span>
 
-                        Designed and developed a database and background service to manage and insert decentralized
-                        finance data
-                        into an extensive research database using Julia and PostgreSQL, which handles over 4
-                        billion+ rows stored
-                        across multiple tables. Completed while as a research assistant for Dr. Alfred Lehar at the
-                        University of Calgary. To view other work I did as a research assistant, please feel free to
-                        check out my resume in the <strong>Documents</strong> section.
-                    </p>
-                    <p>
-                        This project is currently in a private repository, if you would like more details, please
-                        don't
-                        hesistate
-                        in reaching out to me, contact information can be found in the <strong>Contact</strong>
-                        section.
-                    </p>
-                </div>
-            </div>
+                        </div>
+                        <strong>Description:</strong>
+                        <p>
 
-            <div class="project-item">
-                <div class="project-brackets">
-                    <button class="description-button-toggle "
-                        onclick="displayHiddenText('p1', '.description-button-toggle', 1)"> Find My Ride
-                        <span class="project-type">::</span>
-                        <span> CourseProject</span>
-                        <span class="button-arrow" style="color: #ffffff">▼</span>
-                    </button>
-                </div>
-                <div id="p1" style="display: none">
-                    <div class="project-tag">
-                        <div></div>
-                        <span class="tag">Python</span>
-                        <span class="tag">SQL</span>
-                        <span class="tag">PostgreSQL</span>
+                            Designed and developed a database and background service to manage and insert decentralized
+                            finance data
+                            into an extensive research database using Julia and PostgreSQL, which handles over 4
+                            billion+ rows stored
+                            across multiple tables. Completed while as a research assistant for Dr. Alfred Lehar at the
+                            University of Calgary. To view other work I did as a research assistant, please feel free to
+                            check out my resume in the <strong>Documents</strong> section.
+                        </p>
+                        <p>
+                            This project is currently in a private repository, if you would like more details, please
+                            don't
+                            hesistate
+                            in reaching out to me, contact information can be found in the <strong>Contact</strong>
+                            section.
+                        </p>
                     </div>
-                    <p>
-                        Working with 2 partners, we created a full stack application called Find My Ride.
-                        The app is a tool that can aid in checking if a stolen vehicle is being resold on popular
-                        buy-&-sell websites such as Kijiji, by using a detailed description of the vehicle by the
-                        user
-                        to
-                        help find it from listings that have been scraped from these websites. The app has a
-                        dedicated
-                        scraper which actively scrapes new listings as they appear on the sites. This was our final
-                        project submission for CPSC 471 [Data Base Management Systems]
-                    </p>
-                    <p>
-                        The project can be found here: <a span class="simple-clickable no-underline"
-                            href="https://github.com/jaza-k/find-my-ride">
-                            {§}
-                        </a> on Github
-                    </p>
                 </div>
-            </div>
 
-            <div class="project-item">
-                <div class="project-brackets">
-                    <button class="description-button-toggle "
-                        onclick="displayHiddenText('p2', '.description-button-toggle', 2)"> Naïve DEX Arbitrage
-                        Trading
-                        Bot
-                        <span class="project-type">::</span>
-                        <span> CourseProject</span>
-                        <span class="button-arrow" style="color: #ffffff">▼</span>
-                    </button>
-                </div>
-                <div id="p2" style="display: none">
-                    <div class="project-tag">
-                        <div></div>
-                        <span class="tag">Julia</span>
-                        <span class="tag">Solidity</span>
-
+                <div class="project-item">
+                    <div class="project-brackets">
+                        <button class="description-button-toggle "
+                            onclick="displayHiddenText('p1', '.description-button-toggle', 1)"> Find My Ride
+                            <span class="project-type">::</span>
+                            <span> CourseProject</span>
+                            <span class="button-arrow" style="color: #ffffff">▼</span>
+                        </button>
                     </div>
-                    <strong>Description:</strong>
-                    <p>
-                        Working with a partner, we designed and developed a naïve arbitrage trading bot that would
-                        search for and attempt to execute profitable opportunities between multiple decentralized
-                        exchanges (DEXes) on the Ethereum network as part of the FNCE 559 (Decentralized Finance)
-                        final
-                        group project
-                    </p>
-                    <p>
-                        This project is currently in a private repository, if you would like more details, please
-                        don't
-                        hesistate
-                        in reaching out to me, contact information can be found in the <strong>Contact</strong>
-                        section.
-                    </p>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <div class="project-brackets">
-                    <button class="description-button-toggle "
-                        onclick="displayHiddenText('p3', '.description-button-toggle', 3)"> CLI - tools
-                        <span class="project-type">::</span>
-                        <span> PersonalProject</span>
-                        <span class="button-arrow" style="color: #ffffff">▼</span>
-                    </button>
-                </div>
-                <div id="p3" style="display: none">
-                    <div class="project-tag">
-                        <div></div>
-                        <span class="tag">C</span>
-                        <!-- <span class="tag">JavaScript</span> -->
-
+                    <div id="p1" style="display: none">
+                        <div class="project-tag">
+                            <div></div>
+                            <span class="tag">Python</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                        <p>
+                            Working with 2 partners, we created a full stack application called Find My Ride.
+                            The app is a tool that can aid in checking if a stolen vehicle is being resold on popular
+                            buy-&-sell websites such as Kijiji, by using a detailed description of the vehicle by the
+                            user
+                            to
+                            help find it from listings that have been scraped from these websites. The app has a
+                            dedicated
+                            scraper which actively scrapes new listings as they appear on the sites. This was our final
+                            project submission for CPSC 471 [Data Base Management Systems]
+                        </p>
+                        <p>
+                            The project can be found here: <a span class="simple-clickable no-underline"
+                                href="https://github.com/jaza-k/find-my-ride">
+                                {§}
+                            </a> on Github
+                        </p>
                     </div>
-                    <strong>Description:</strong>
-                    <p>
-                        A collection of cli-tools made using C (for now) to learn about areas I'm unfamiliar with
-                        and to
-                        gain a
-                        better
-                        understanding of how some existing CLI tools work.
-                    </p>
-                    <p>
-                        The project can be found here: <a span class="simple-clickable no-underline"
-                            href="https://github.com/peter-kuchel/cli-tools">
-                            {§}
-                        </a> on Github
-                    </p>
                 </div>
-            </div>
 
-            <div class="project-item">
-                <div class="project-brackets">
-                    <button class="description-button-toggle "
-                        onclick="displayHiddenText('p4', '.description-button-toggle', 4)"> AI Scheduler System
-                        <span class="project-type">::</span>
-                        <span> CourseProject</span>
-                        <span class="button-arrow" style="color: #ffffff">▼</span>
-                    </button>
-                </div>
-                <div id="p4" style="display: none">
-                    <div class="project-tag">
-                        <div></div>
-                        <span class="tag">Java</span>
+                <div class="project-item">
+                    <div class="project-brackets">
+                        <button class="description-button-toggle "
+                            onclick="displayHiddenText('p2', '.description-button-toggle', 2)"> Naïve DEX Arbitrage
+                            Trading
+                            Bot
+                            <span class="project-type">::</span>
+                            <span> CourseProject</span>
+                            <span class="button-arrow" style="color: #ffffff">▼</span>
+                        </button>
                     </div>
-                    <strong>Description:</strong>
-                    <p>
-                        In a team of 4, we developed an AI Scheduler System which uses
-                        genetic set-based search and an or-tree search to build a schedule from a list of
-                        contrainsts and dates. Completed as part of a
-                        the
-                        final project for CPSC 443: Artificial
-                        Intelligence.
-                    </p>
-                    <p>
-                        This project is currently in a private repository, if you would like more details, please
-                        don't
-                        hesistate
-                        in reaching out to me, contact information can be found in the <strong>Contact</strong>
-                        section.
-                    </p>
-                </div>
-            </div>
+                    <div id="p2" style="display: none">
+                        <div class="project-tag">
+                            <div></div>
+                            <span class="tag">Julia</span>
+                            <span class="tag">Solidity</span>
 
-            <div class="project-item">
-                <div class="project-brackets">
-                    <button class="description-button-toggle "
-                        onclick="displayHiddenText('p5', '.description-button-toggle', 5)"> Raspberry Pi SNES Game
-                        <span class="project-type">::</span>
-                        <span> CourseProject</span>
-                        <span class="button-arrow" style="color: #ffffff">▼</span>
-                    </button>
-                </div>
-                <div id="p5" style="display: none">
-                    <div class="project-tag">
-                        <div></div>
-                        <span class="tag">C</span>
+                        </div>
+                        <strong>Description:</strong>
+                        <p>
+                            Working with a partner, we designed and developed a naïve arbitrage trading bot that would
+                            search for and attempt to execute profitable opportunities between multiple decentralized
+                            exchanges (DEXes) on the Ethereum network as part of the FNCE 559 (Decentralized Finance)
+                            final
+                            group project
+                        </p>
+                        <p>
+                            This project is currently in a private repository, if you would like more details, please
+                            don't
+                            hesistate
+                            in reaching out to me, contact information can be found in the <strong>Contact</strong>
+                            section.
+                        </p>
                     </div>
-                    <strong>Description:</strong>
-                    <p>
-                        Working with a partner, we developed a video game that runs on a Raspberry Pi, which is
-                        playable
-                        using a SNES controller and developed using the C programming language, as part
-                        of an assignment for the course CPSC 359 (Computing Machinery II).
-                    </p>
-                    <p>
-                        This project is currently in a private repository, if you would like more details, please
-                        don't
-                        hesistate
-                        in reaching out to me, contact information can be found in the <strong>Contact</strong>
-                        section.
-                    </p>
                 </div>
-            </div>
 
-            <div class="project-item">
-                <div class="project-brackets">
-                    <button class="description-button-toggle "
-                        onclick="displayHiddenText('p6', '.description-button-toggle', 6)"> Monte Carlo VaR & CVaR
-                        <span class="project-type">::</span>
-                        <span> PersonalProject</span>
-                        <span class="button-arrow" style="color: #ffffff">▼</span>
-                    </button>
-                </div>
-                <div id="p6" style="display: none">
-                    <div class="project-tag">
-                        <div></div>
-                        <span class="tag">Python</span>
+                <div class="project-item">
+                    <div class="project-brackets">
+                        <button class="description-button-toggle "
+                            onclick="displayHiddenText('p3', '.description-button-toggle', 3)"> CLI - tools
+                            <span class="project-type">::</span>
+                            <span> PersonalProject</span>
+                            <span class="button-arrow" style="color: #ffffff">▼</span>
+                        </button>
                     </div>
-                    <strong>Description:</strong>
-                    <p>
-                        I created a program to calculate the VaR and CVaR for a given portfolio using a Monte Carlo
-                        model. The model uses a linear congruential generator to generate pseudo random numbers, and
-                        makes use of brownian motion to simulate returns. The program was written in Python.
-                    </p>
-                    <p>
-                        The project can be found here: <a span class="simple-clickable no-underline"
-                            href="https://gitlab.com/peter.kuchel/finance-projects/-/tree/master/MonteCarloVar">
-                            {§}
-                        </a> on Gitlab
-                    </p>
-                </div>
-            </div>
+                    <div id="p3" style="display: none">
+                        <div class="project-tag">
+                            <div></div>
+                            <span class="tag">C</span>
+                            <!-- <span class="tag">JavaScript</span> -->
 
-            <div class="project-item">
-                <div class="project-brackets">
-                    <button class="description-button-toggle "
-                        onclick="displayHiddenText('p7', '.description-button-toggle', 7)"> Tweet Collector
-                        <span class="project-type">::</span>
-                        <span> WorkProject</span>
-                        <span class="button-arrow" style="color: #ffffff">▼</span>
-                    </button>
-                </div>
-                <div id="p7" style="display: none">
-                    <div class="project-tag">
-                        <div></div>
-                        <span class="tag">Python</span>
+                        </div>
+                        <strong>Description:</strong>
+                        <p>
+                            A collection of cli-tools made using C (for now) to learn about areas I'm unfamiliar with
+                            and to
+                            gain a
+                            better
+                            understanding of how some existing CLI tools work.
+                        </p>
+                        <p>
+                            The project can be found here: <a span class="simple-clickable no-underline"
+                                href="https://github.com/peter-kuchel/cli-tools">
+                                {§}
+                            </a> on Github
+                        </p>
                     </div>
-                    <p class="project-tag">
-                        I helped a master student in the Department of Sociology at the University of Calgary with
-                        her
-                        thesis, by helping her collect Tweets with specific hashtags she needed to analyze.
-                        With a restriction of 250 requests to the Twitter API, I helped her maximize the number of
-                        Tweets she needed to gather for a list of specific hashtags, and pulled ~35,000 Tweets from
-                        the
-                        API.
-                    </p>
-                    <p>
-                        The project can be found here: <a span class="simple-clickable no-underline"
-                            href="https://gitlab.com/peter.kuchel/twitter-api-pull">
-                            {§}
-                        </a> on Gitlab
-                    </p>
                 </div>
+
+                <div class="project-item">
+                    <div class="project-brackets">
+                        <button class="description-button-toggle "
+                            onclick="displayHiddenText('p4', '.description-button-toggle', 4)"> AI Scheduler System
+                            <span class="project-type">::</span>
+                            <span> CourseProject</span>
+                            <span class="button-arrow" style="color: #ffffff">▼</span>
+                        </button>
+                    </div>
+                    <div id="p4" style="display: none">
+                        <div class="project-tag">
+                            <div></div>
+                            <span class="tag">Java</span>
+                        </div>
+                        <strong>Description:</strong>
+                        <p>
+                            In a team of 4, we developed an AI Scheduler System which uses
+                            genetic set-based search and an or-tree search to build a schedule from a list of
+                            contrainsts and dates. Completed as part of a
+                            the
+                            final project for CPSC 443: Artificial
+                            Intelligence.
+                        </p>
+                        <p>
+                            This project is currently in a private repository, if you would like more details, please
+                            don't
+                            hesistate
+                            in reaching out to me, contact information can be found in the <strong>Contact</strong>
+                            section.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-brackets">
+                        <button class="description-button-toggle "
+                            onclick="displayHiddenText('p5', '.description-button-toggle', 5)"> Raspberry Pi SNES Game
+                            <span class="project-type">::</span>
+                            <span> CourseProject</span>
+                            <span class="button-arrow" style="color: #ffffff">▼</span>
+                        </button>
+                    </div>
+                    <div id="p5" style="display: none">
+                        <div class="project-tag">
+                            <div></div>
+                            <span class="tag">C</span>
+                        </div>
+                        <strong>Description:</strong>
+                        <p>
+                            Working with a partner, we developed a video game that runs on a Raspberry Pi, which is
+                            playable
+                            using a SNES controller and developed using the C programming language, as part
+                            of an assignment for the course CPSC 359 (Computing Machinery II).
+                        </p>
+                        <p>
+                            This project is currently in a private repository, if you would like more details, please
+                            don't
+                            hesistate
+                            in reaching out to me, contact information can be found in the <strong>Contact</strong>
+                            section.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-brackets">
+                        <button class="description-button-toggle "
+                            onclick="displayHiddenText('p6', '.description-button-toggle', 6)"> Monte Carlo VaR & CVaR
+                            <span class="project-type">::</span>
+                            <span> PersonalProject</span>
+                            <span class="button-arrow" style="color: #ffffff">▼</span>
+                        </button>
+                    </div>
+                    <div id="p6" style="display: none">
+                        <div class="project-tag">
+                            <div></div>
+                            <span class="tag">Python</span>
+                        </div>
+                        <strong>Description:</strong>
+                        <p>
+                            I created a program to calculate the VaR and CVaR for a given portfolio using a Monte Carlo
+                            model. The model uses a linear congruential generator to generate pseudo random numbers, and
+                            makes use of brownian motion to simulate returns. The program was written in Python.
+                        </p>
+                        <p>
+                            The project can be found here: <a span class="simple-clickable no-underline"
+                                href="https://gitlab.com/peter.kuchel/finance-projects/-/tree/master/MonteCarloVar">
+                                {§}
+                            </a> on Gitlab
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-brackets">
+                        <button class="description-button-toggle "
+                            onclick="displayHiddenText('p7', '.description-button-toggle', 7)"> Tweet Collector
+                            <span class="project-type">::</span>
+                            <span> WorkProject</span>
+                            <span class="button-arrow" style="color: #ffffff">▼</span>
+                        </button>
+                    </div>
+                    <div id="p7" style="display: none">
+                        <div class="project-tag">
+                            <div></div>
+                            <span class="tag">Python</span>
+                        </div>
+                        <p class="project-tag">
+                            I helped a master student in the Department of Sociology at the University of Calgary with
+                            her
+                            thesis, by helping her collect Tweets with specific hashtags she needed to analyze.
+                            With a restriction of 250 requests to the Twitter API, I helped her maximize the number of
+                            Tweets she needed to gather for a list of specific hashtags, and pulled ~35,000 Tweets from
+                            the
+                            API.
+                        </p>
+                        <p>
+                            The project can be found here: <a span class="simple-clickable no-underline"
+                                href="https://gitlab.com/peter.kuchel/twitter-api-pull">
+                                {§}
+                            </a> on Gitlab
+                        </p>
+                    </div>
+                </div>
+
             </div>
 
         </div>
 
-    </div>
+        <div class="create-alittle-space"></div>
+        <div id="documents" class="section">
+            <h2 class="section-header">{ Documents }</h2>
+            <a class="simple-clickable no-underline" href="/documents/Resume_Peter_Kuchel.pdf"
+                target="_blank">*(Resume)</a>
+            <div></div>
+            <a class="simple-clickable no-underline" href="/documents/Unofficial_Transcript_2023_Final_Peter_Kuchel.pdf"
+                target="_blank">*(Unofficial
+                Transcript)</a>
+        </div>
 
-    <div class="create-alittle-space"></div>
-    <div id="documents" class="section">
-        <h2 class="section-header">{ Documents }</h2>
-        <a class="simple-clickable no-underline" href="/documents/Resume_Peter_Kuchel.pdf" target="_blank">*(Resume)</a>
-        <div></div>
-        <a class="simple-clickable no-underline" href="/documents/Unofficial_Transcript_2023_Final_Peter_Kuchel.pdf"
-            target="_blank">*(Unofficial
-            Transcript)</a>
-    </div>
+        <div id="contact" class="section">
+            <h2 class="section-header">{ Contact }</h2>
+            <p>petermichaelkuchel@gmail.com</p>
+            <!-- <p>Email: peter.kuchel@ucalgary.ca <span style="color: #07ef7b">||</span> petermichaelkuchel@gmail.com</p> -->
+            <p>-/E|-<span><a class="simple-clickable no-underline"
+                        href="https://github.com/peter-kuchel">-{GitHub}-</a></span>-<span><a
+                        href="https://gitlab.com/peter.kuchel"
+                        class="simple-clickable no-underline">-{GitLab}-</a></span>-<span><a
+                        class="simple-clickable no-underline"
+                        href="https://www.linkedin.com/in/peter-kuchel/">-{LinkedIn}-</a></span>-|Ǝ\-</p>
+        </div>
 
-    <div id="contact" class="section">
-        <h2 class="section-header">{ Contact }</h2>
-        <p>petermichaelkuchel@gmail.com</p>
-        <!-- <p>Email: peter.kuchel@ucalgary.ca <span style="color: #07ef7b">||</span> petermichaelkuchel@gmail.com</p> -->
-        <p>-/E|-<span><a class="simple-clickable no-underline"
-                    href="https://github.com/peter-kuchel">-{GitHub}-</a></span>-<span><a
-                    href="https://gitlab.com/peter.kuchel"
-                    class="simple-clickable no-underline">-{GitLab}-</a></span>-<span><a
-                    class="simple-clickable no-underline"
-                    href="https://www.linkedin.com/in/peter-kuchel/">-{LinkedIn}-</a></span>-|Ǝ\-</p>
-    </div>
-
-    <div class="section">
-        <p class="simple-clickable" onclick="scrollToElement('nav');"> [ Back to top ] </p>
-    </div>
+        <div class="section">
+            <p class="simple-clickable" onclick="scrollToElement('nav');"> [ Back to top ] </p>
+        </div>
     </div>
 </body>
 

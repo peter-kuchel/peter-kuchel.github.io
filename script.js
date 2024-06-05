@@ -46,8 +46,8 @@ document.addEventListener("keypress", event => {
                     handleDisplaying("hidden3", "block");
                     setTimeout(() => {
                         handleDisplaying("hidden4", "block");
-                    }, 500);
-                }, 3500);
+                    }, 750);
+                }, 1700);
             }, 1500);
         }, 750);
 
