@@ -53,9 +53,13 @@ header {
     margin: auto;
 }
 
-/* .intro-blink-toggle{
-    display:
-} */
+.canvas-style {
+
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    padding-top: 30px;
+}
 
 .blink-toggle {
     display: none;

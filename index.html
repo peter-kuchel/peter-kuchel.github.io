@@ -10,40 +10,10 @@
 </head>
 
 <body>
-
-    <div class="center-intro">
-
-        <p class="intro-msg">peter@main:~/project$ cat instructions.txt</p>
-        <p class="intro-msg" style="color: #ffffff">press ENTER to compile and run the program!</p>
-        <p class="intro-msg">peter@main:~/project$ make && ./intro_message<span id="blink1" class="blink-hide">█</span>
-        </p>
-        <div id="hidden1" style="display:none">
-            <p class="intro-msg">gcc -Wall -Wextra -g -c source/chunk.c -o build/chunk.o</p>
-            <p class="intro-msg">gcc -Wall -Wextra -g -c source/value.c -o build/value.o</p>
-            <p class="intro-msg">gcc -Wall -Wextra -g -c source/compiler.c -o build/compiler.o</p>
-            <p class="intro-msg">gcc -Wall -Wextra -g -c source/vm.c -o build/vm.o</p>
-            <p class="intro-msg">gcc -Wall -Wextra -g -c source/memory.c -o build/memory.o</p>
-            <p class="intro-msg">gcc -Wall -Wextra -g -c source/main.c -o build/main.o</p>
-            <p class="intro-msg">gcc -Wall -Wextra -g -c source/scanner.c -o build/scanner.o</p>
-            <p class="intro-msg">gcc ./build/chunk.o ./build/value.o ./build/compiler.o ./build/vm.o </p>
-            <p class="intro-msg">&nbsp;./build/memory.o ./build/main.o ./build/scanner.o -o intro_message</p>
-
-        </div>
-        <div id="hidden2" style="display:none">
-            <p class="intro-msg" style="color: #ffffff">Hello World! I'm Peter Kuchel, click <span class="intro-click"
-                    onclick="scrollToElement('nav');">{here} </span>to learn more about:</p>
-        </div>
-        <div id="hidden3" style="display:none">
-            <p class=" intro-msg">&nbsp;</p>
-            <p class="intro-msg">Segmentation fault (core dumped)</p>
-
-        </div>
-        <div id="hidden4" style="display:none">
-            <p class="intro-msg">peter@main:~/project$ <span id="blink2" class="blink">█</span></p>
-        </div>
-    </div>
-
-    <div class="create-space"></div>
+    
+    <canvas id="c" width="700" height="500" class="canvas-style"></canvas>
+    <script src="pyr.js"></script>
+    <div class="create-alittle-space"></div>
     <div class="center-everything">
         <div id="nav" class="nav-bar">
 
