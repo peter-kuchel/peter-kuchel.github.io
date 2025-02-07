@@ -83,6 +83,7 @@ header {
     text-align: center;
 }
 
+
 .simple-clickable {
     color: #07ef7b;
     cursor: pointer;
@@ -90,6 +91,14 @@ header {
 
 .simple-clickable:hover {
     color: #ffffff;
+}
+
+.click-next{
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    opacity: 0.8;
 }
 
 .about-container {
@@ -105,6 +114,10 @@ header {
 
 .create-alittle-space {
     padding: 15rem;
+}
+
+.create-tiny-space {
+    padding: 10rem;
 }
 
 .section {
