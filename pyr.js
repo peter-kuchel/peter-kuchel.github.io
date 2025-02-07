@@ -4,7 +4,7 @@
 	let canvas = document.getElementById("c")
 	let tmr = undefined
 
-	const xo = 325, yo = 225, zo = 0, so = 25, Z1 = 25, Z2 = 25
+	const xo = 325, yo = 225, zo = 0, so = 0, Z1 = 25, Z2 = 25
 	let origin = [(xo + (so / 2) + (so / 2)), (yo + (so / 2) + (so / 2))]
 
 	let a = [-50, -50, 0], b = [50, -50, 0], c = [50, 50, 0], d = [-50, 50, 0],
@@ -32,16 +32,14 @@
 		
 		const draw_line = (x0, y0, x1, y1, ctx) => {
 
-			let m = ( y1 - y0 ) / (x1 - x0)
-			let b = y0 - (m * x0) 
+			let m = ( y1 - y0 ) / (x1 - x0),
+			    b = y0 - (m * x0), 
+			    i = (x1 - x0) / dis,
+			    xj = x0, yj = 0
 
-			let i = (x1 - x0) / dis 
-			
-			let xj = x0	
-			let yj = 0
 			for (let k = 0; k < dis; k++){
 				yj = ( m * xj ) + b
-				ctx.fillRect(xj, yj, 1.5, 1.5)	
+				ctx.fillRect(xj, yj, 1.0, 1.0)	
 				xj += i
 			}
 		}
@@ -76,6 +74,6 @@
 			draw_line(origin[0] + ps_p1[i-1][0], origin[1] + ps_p1[i-1][1], origin[0] + ps_p1[i][0], origin[1] + ps_p1[i][1], ctx)
 		}
 	}
-	tmr = setInterval(rotate, 45)
+	tmr = setInterval(rotate, 60)
 })()
 
