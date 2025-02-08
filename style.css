@@ -102,8 +102,8 @@ header {
 }
 
 .about-container {
-    width: 60%;
-    max-width: 1200px;
+    width: 40%;
+    max-width: 1000px;
     margin: auto;
     padding: 20px;
 }
