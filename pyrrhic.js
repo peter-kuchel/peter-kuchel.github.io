@@ -3,8 +3,6 @@ let track = 0;
 
 (() => {
 
-
-//const canvas = document.getElementById("c")
 let tmr = undefined
 
 const xo = 325, yo = 225, r = (35/30)
@@ -19,14 +17,12 @@ const sqr = {
 	d : 7
 }
 
-
 const pyr = {
 	f1 : [[50, 50, 0], [-50, 50, 0], [-50, 50, -100], [50, 50, -100], [50, 50, 0], [0,-50,-50]],
 	p1 : [[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],
 	ad : [0.005, 0.13, 0.01],
 	a :  [0, 0, 0],
 	d : 12
-
 }
 
 const draw_line = (x0, y0, x1, y1, d, ctx) => {
@@ -84,8 +80,8 @@ const r_sqr = (sqr) => {
 
 		ps_p2[i][0] = fx(x,y,z)
 		ps_p2[i][1] = fy(x,y,z)
-
 	}
+
 	let dis = sqr["d"]	
 	for (i = 1; i < ps_f1.length; i++){
 
@@ -100,7 +96,6 @@ const r_sqr = (sqr) => {
 		x = origin[0] + ps_p2[i][0]; y = origin[1] + ps_p2[i][1]
 		draw_line(_x, _y, x, y, dis, ctx)
 	}
-	//console.log(ps_p1)
 }
 
 const r_pyr = (pyr) => {
@@ -132,7 +127,6 @@ const r_pyr = (pyr) => {
 	
 	const fx = (_x, _y, _z) => ((_x * cb * cg) - (_y * cb * sg) + (_z * sb)) * r; 
 	const fy = (_x, _y, _z) => ((_x * sasb * cg) + (_x * ca * sg) + (_y * ca * cg) - (_y * sasb * sg) - (_z * sa * cb)) * r;
-
 
 	let ps_f1 = pyr["f1"], ps_p1 = pyr["p1"]
 	for (i = 0; i < ps_f1.length; i++){
@@ -177,7 +171,6 @@ const move_left = (event) => {
 
 	track = track - 1 >= 0 ? track - 1 : 1
 	select_view()
-
 }
 
 const  move_right = (event) => {
@@ -191,6 +184,3 @@ document.getElementById("b2").addEventListener("click", move_right, false)
 
 })();
 
-/*
-
-*/
