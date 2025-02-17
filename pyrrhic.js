@@ -1,5 +1,6 @@
 
 let track = 0;
+const min_c = 0, max_c = 1;
 
 (() => {
 
@@ -153,28 +154,44 @@ const r_pyr = (pyr) => {
 	ctx.fillRect(_x, _y, 1.5, 1.5)	
 }
 
+const nut = {
+
+	r1p : [xo, yo], r1 : 50,
+	r2 : 15,
+	a : [0, 0, 0],
+	ad : [0.1, 0.05, 0.06]
+	
+}
+
+const r_nut = (nut) => {
+
+}
+
 const select_view = () => {
 	
 	if (tmr !== undefined){
 		clearInterval(tmr)
 	}
 	
-	if (track == 0){
-		tmr = setInterval(r_sqr, 65, sqr)
+	switch(track){
 
-	} else if (track == 1){
-		tmr = setInterval(r_pyr, 65, pyr)
+		case 0: 
+			tmr = setInterval(r_sqr, 65, sqr)
+			break;
+		case 1:
+			tmr = setInterval(r_pyr, 65, pyr)
+			break;
 	}
 }
 
 const move_left = (event) => {
 
-	track = track - 1 >= 0 ? track - 1 : 1
+	track = track - 1 >= min_c ? track - 1 : max_c
 	select_view()
 }
 
 const  move_right = (event) => {
-	track = track + 1 <= 1 ? track + 1 : 0
+	track = track + 1 <= max_c ? track + 1 : min_c
 	select_view()
 }
 
