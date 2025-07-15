@@ -1,6 +1,6 @@
-
+// refactor the function to do the transformation 
 let track = 0;
-const min_c = 0, max_c = 1;
+const min_c = 0, max_c = 2;
 
 (() => {
 
@@ -24,6 +24,15 @@ const pyr = {
 	ad : [0.005, 0.13, 0.01],
 	a :  [0, 0, 0],
 	d : 12
+}
+
+const nut = {
+
+	r1p : [xo, yo], r1 : 50,
+	r2 : 20,
+	a : [0, 0, 0],
+	ad : [-0.008, -0.12, -0.03],
+	d: [10, 30] // (dR, dr)
 }
 
 const draw_line = (x0, y0, x1, y1, d, ctx) => {
@@ -154,17 +163,79 @@ const r_pyr = (pyr) => {
 	ctx.fillRect(_x, _y, 1.5, 1.5)	
 }
 
-const nut = {
+//const nut = {
+//
+//	r1p : [xo, yo], r1 : 20,
+//	r2 : 60,
+//	a : [0, 0, 0],
+//	ad : [0.0, 0.05, 0.0]
+//}
 
-	r1p : [xo, yo], r1 : 50,
-	r2 : 15,
-	a : [0, 0, 0],
-	ad : [0.1, 0.05, 0.06]
+
+const _fx = (_a,_b,_g) => {
+
+	let sa = Math.sin(_a), sb = Math.sin(_b), sg = Math.sin(_g), 
+	    ca = Math.cos(_a), cb = Math.cos(_b), cg = Math.cos(_g),
+            sasb = sa * sb
+
+	const fx = (_x, _y, _z) => ((_x * cb * cg) - (_y * cb * sg) + (_z * sb)) * r; 
 	
+	return fx
+
 }
+
+const _fy = (_a,_b,_g) => {
+
+	let sa = Math.sin(_a), sb = Math.sin(_b), sg = Math.sin(_g), 
+	    ca = Math.cos(_a), cb = Math.cos(_b), cg = Math.cos(_g),
+            sasb = sa * sb
+	
+	const fy = (_x, _y, _z) => ((_x * sasb * cg) + (_x * ca * sg) + (_y * ca * cg) - (_y * sasb * sg) - (_z * sa * cb)) * r;
+	return fy
+
+}
+
+
 
 const r_nut = (nut) => {
 
+	let canvas = document.getElementById("c")
+	let ctx = canvas.getContext("2d")
+	ctx.clearRect(0, 0, canvas.width, canvas.height)
+	ctx.fillStyle = '#07ef7b'
+
+	let x = 0, y = 0, z = 0, _x = 0, _y = 0
+
+	let _a = nut["a"][0], _b = nut["a"][1], _g = nut["a"][2]
+
+	const fx = _fx(_a,_b,_g)  
+	const fy = _fy(_a,_b,_g)  
+
+	
+	for (let i = 0; i < nut["a"].length; i++){	
+		nut["a"][i] += nut["ad"][i];
+
+		if (nut["a"][i] > 100 || nut["a"][i] <  -100) nut["a"][i] = 0;
+	}
+	let R = nut["r1"], r = nut["r2"]
+	    _xo = nut["r1p"][0], _yo = nut["r1p"][1]
+
+	let m = 2 * Math.PI
+	let dr1 = m / nut["d"][0], dr2 = m / nut["d"][1]
+
+	for(let t = 0; t < m; t += dr1){
+
+		for(let u = 0; u < m; u += dr2){
+			x = (Math.cos(u) * R) + (r * Math.sin(t) * Math.cos(u)) 
+			y = (Math.sin(u) * R) + (r * Math.sin(t) * Math.sin(u)) 
+			z = (r * Math.cos(t))
+
+			_x = fx(x,y,z) + _xo
+			_y = fy(x,y,z) + _yo
+			ctx.fillRect(_x, _y, 1.5, 1.5)	
+			
+		}
+	}
 }
 
 const select_view = () => {
@@ -175,11 +246,14 @@ const select_view = () => {
 	
 	switch(track){
 
-		case 0: 
+		case 2: 
 			tmr = setInterval(r_sqr, 65, sqr)
 			break;
 		case 1:
 			tmr = setInterval(r_pyr, 65, pyr)
+			break;
+		case 0: 
+			tmr = setInterval(r_nut, 65, nut)
 			break;
 	}
 }
