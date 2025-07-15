@@ -10,8 +10,7 @@ const xo = 325, yo = 225, ratio = (35/30)
 const _fx = (_a,_b,_g) => {
 
 	let sa = Math.sin(_a), sb = Math.sin(_b), sg = Math.sin(_g), 
-	    ca = Math.cos(_a), cb = Math.cos(_b), cg = Math.cos(_g),
-            sasb = sa * sb
+	    ca = Math.cos(_a), cb = Math.cos(_b), cg = Math.cos(_g)
 
 	const fx = (_x, _y, _z) => ((_x * cb * cg) - (_y * cb * sg) + (_z * sb)) * ratio; 	
 	return fx
@@ -76,7 +75,7 @@ const sph = {
 
 	r: 60,
 	a : [0, 0, 0],
-	ad : [0.01, 0.03, 0.09],
+	ad : [0.02, 0.01, 0.12],
 	d : [50, 50]
 }
 
@@ -269,7 +268,7 @@ const select_view = () => {
 	
 	switch(track){
 
-		case 3: 
+		case 0: 
 			tmr = setInterval(r_sqr, 65, sqr)
 			break;
 		case 2:
@@ -278,7 +277,7 @@ const select_view = () => {
 		case 1: 
 			tmr = setInterval(r_nut, 65, nut)
 			break;
-		case 0: 
+		case 3: 
 			tmr = setInterval(r_sph, 65, sph)
 			break;
 	}
