@@ -35,6 +35,27 @@ const nut = {
 	d: [10, 30] // (dR, dr)
 }
 
+const _fx = (_a,_b,_g) => {
+
+	let sa = Math.sin(_a), sb = Math.sin(_b), sg = Math.sin(_g), 
+	    ca = Math.cos(_a), cb = Math.cos(_b), cg = Math.cos(_g),
+            sasb = sa * sb
+
+	const fx = (_x, _y, _z) => ((_x * cb * cg) - (_y * cb * sg) + (_z * sb)) * r; 	
+	return fx
+
+}
+
+const _fy = (_a,_b,_g) => {
+
+	let sa = Math.sin(_a), sb = Math.sin(_b), sg = Math.sin(_g), 
+	    ca = Math.cos(_a), cb = Math.cos(_b), cg = Math.cos(_g),
+            sasb = sa * sb
+	
+	const fy = (_x, _y, _z) => ((_x * sasb * cg) + (_x * ca * sg) + (_y * ca * cg) - (_y * sasb * sg) - (_z * sa * cb)) * r;
+	return fy
+
+}
 const draw_line = (x0, y0, x1, y1, d, ctx) => {
 			
 	let v = x1 - x0 == 0
@@ -69,12 +90,8 @@ const r_sqr = (sqr) => {
 
 	let _a = sqr["a"][0], _b = sqr["a"][1], _g = sqr["a"][2]
 
-	let sa = Math.sin(_a), sb = Math.sin(_b), sg = Math.sin(_g), 
-	    ca = Math.cos(_a), cb = Math.cos(_b), cg = Math.cos(_g),
-	    sasb = sa * sb
-	
-	const fx = (_x, _y, _z) => ((_x * cb * cg) - (_y * cb * sg) + (_z * sb)) * r; 
-	const fy = (_x, _y, _z) => ((_x * sasb * cg) + (_x * ca * sg) + (_y * ca * cg) - (_y * sasb * sg) - (_z * sa * cb)) * r;
+	const fx = _fx(_a,_b,_g)  
+	const fy = _fy(_a,_b,_g)  
 
 	let ps_f1 = sqr["f1"], ps_f2 = sqr["f2"],
 	    ps_p1 = sqr["p1"], ps_p2 = sqr["p2"]
@@ -129,14 +146,11 @@ const r_pyr = (pyr) => {
 			if (pyr["a"][i] > 100 || pyr["a"][i] <  -100) pyr["a"][i] = 0;
 		}
 	}
+
 	let _a = pyr["a"][0], _b = pyr["a"][1], _g = pyr["a"][2]
 
-	let sa = Math.sin(_a), sb = Math.sin(_b), sg = Math.sin(_g), 
-	    ca = Math.cos(_a), cb = Math.cos(_b), cg = Math.cos(_g),
-            sasb = sa * sb
-	
-	const fx = (_x, _y, _z) => ((_x * cb * cg) - (_y * cb * sg) + (_z * sb)) * r; 
-	const fy = (_x, _y, _z) => ((_x * sasb * cg) + (_x * ca * sg) + (_y * ca * cg) - (_y * sasb * sg) - (_z * sa * cb)) * r;
+	const fx = _fx(_a,_b,_g)  
+	const fy = _fy(_a,_b,_g)  
 
 	let ps_f1 = pyr["f1"], ps_p1 = pyr["p1"]
 	for (i = 0; i < ps_f1.length; i++){
@@ -163,40 +177,6 @@ const r_pyr = (pyr) => {
 	ctx.fillRect(_x, _y, 1.5, 1.5)	
 }
 
-//const nut = {
-//
-//	r1p : [xo, yo], r1 : 20,
-//	r2 : 60,
-//	a : [0, 0, 0],
-//	ad : [0.0, 0.05, 0.0]
-//}
-
-
-const _fx = (_a,_b,_g) => {
-
-	let sa = Math.sin(_a), sb = Math.sin(_b), sg = Math.sin(_g), 
-	    ca = Math.cos(_a), cb = Math.cos(_b), cg = Math.cos(_g),
-            sasb = sa * sb
-
-	const fx = (_x, _y, _z) => ((_x * cb * cg) - (_y * cb * sg) + (_z * sb)) * r; 
-	
-	return fx
-
-}
-
-const _fy = (_a,_b,_g) => {
-
-	let sa = Math.sin(_a), sb = Math.sin(_b), sg = Math.sin(_g), 
-	    ca = Math.cos(_a), cb = Math.cos(_b), cg = Math.cos(_g),
-            sasb = sa * sb
-	
-	const fy = (_x, _y, _z) => ((_x * sasb * cg) + (_x * ca * sg) + (_y * ca * cg) - (_y * sasb * sg) - (_z * sa * cb)) * r;
-	return fy
-
-}
-
-
-
 const r_nut = (nut) => {
 
 	let canvas = document.getElementById("c")
@@ -218,7 +198,6 @@ const r_nut = (nut) => {
 		if (nut["a"][i] > 100 || nut["a"][i] <  -100) nut["a"][i] = 0;
 	}
 	let R = nut["r1"], r = nut["r2"]
-	    _xo = nut["r1p"][0], _yo = nut["r1p"][1]
 
 	let m = 2 * Math.PI
 	let dr1 = m / nut["d"][0], dr2 = m / nut["d"][1]
@@ -230,10 +209,9 @@ const r_nut = (nut) => {
 			y = (Math.sin(u) * R) + (r * Math.sin(t) * Math.sin(u)) 
 			z = (r * Math.cos(t))
 
-			_x = fx(x,y,z) + _xo
-			_y = fy(x,y,z) + _yo
+			_x = fx(x,y,z) + xo
+			_y = fy(x,y,z) + yo
 			ctx.fillRect(_x, _y, 1.5, 1.5)	
-			
 		}
 	}
 }
@@ -246,13 +224,13 @@ const select_view = () => {
 	
 	switch(track){
 
-		case 2: 
+		case 0: 
 			tmr = setInterval(r_sqr, 65, sqr)
 			break;
-		case 1:
+		case 2:
 			tmr = setInterval(r_pyr, 65, pyr)
 			break;
-		case 0: 
+		case 1: 
 			tmr = setInterval(r_nut, 65, nut)
 			break;
 	}
