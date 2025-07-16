@@ -1,5 +1,5 @@
 let track = 0;
-const min_c = 0, max_c = 3;
+const min_c = 0, max_c = 4;
 
 (() => {
 
@@ -75,8 +75,53 @@ const sph = {
 
 	r: 60,
 	a : [0, 0, 0],
-	ad : [0.02, 0.01, 0.12],
+	ad : [0.11, -0.04, 0.06],
 	d : [50, 50]
+}
+
+const kb = {
+	a : [0,0,0],
+	ad : [0.01,0.02,0.03],
+	v : 5,
+}
+
+const r_kb = (kb) => {
+
+
+	let canvas = document.getElementById("c")
+	let ctx = canvas.getContext("2d")
+	ctx.clearRect(0, 0, canvas.width, canvas.height)
+	ctx.fillStyle = '#07ef7b'
+
+	for (let i = 0; i < kb["a"].length; i++){	
+		kb["a"][i] += kb["ad"][i];
+
+		if (kb["a"][i] > 100 || kb["a"][i] <  -100) kb["a"][i] = 0;
+	}
+
+	let _a = kb["a"][0], _b = kb["a"][1], _g = kb["a"][2]
+
+	const fx = _fx(_a,_b,_g)  
+	const fy = _fy(_a,_b,_g)  
+
+	let m = 2 * Math.PI 
+	let x = 0, y = 0, z = 0, _x = 0, _y = 0
+	    dt = m / 50
+		, _v = kb["v"]
+
+	for (let v = -5; v <= 5; v += 0.1){
+	for (let t =0; t < m; t += dt){
+		if (v > -3 && v < 3) continue	
+		x = Math.cosh(v)*Math.cos(t)
+		y = Math.cosh(v)*Math.sin(t)
+		z = Math.sinh(v)
+
+		_x = fx(x,y,z) + xo
+		_y = fy(x,y,z) + yo
+
+		ctx.fillRect(_x, _y, 1.5, 1.5)	
+		}
+	}
 }
 
 const r_sph = (sph) => {
@@ -269,6 +314,9 @@ const select_view = () => {
 	switch(track){
 
 		case 0: 
+			tmr = setInterval(r_kb, 65, kb)
+			break;
+		case 4: 
 			tmr = setInterval(r_sqr, 65, sqr)
 			break;
 		case 2:
