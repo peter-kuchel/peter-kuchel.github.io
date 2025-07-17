@@ -98,14 +98,21 @@ const mhyb = {
 	d : 75
 }
 
-const r_mhyb = (myhb) => {
-
+const nctx = () => {
 
 	let canvas = document.getElementById("c")
 	let ctx = canvas.getContext("2d")
 	ctx.clearRect(0, 0, canvas.width, canvas.height)
 	ctx.fillStyle = '#07ef7b'
 
+	return ctx
+
+}
+
+const r_mhyb = (myhb) => {
+
+
+	let ctx = nctx()
 	for (let i = 0; i < mhyb["a"].length; i++){	
 		mhyb["a"][i] += mhyb["ad"][i];
 
@@ -148,11 +155,7 @@ const r_mhyb = (myhb) => {
 const r_hyb = (hyb) => {
 
 
-	let canvas = document.getElementById("c")
-	let ctx = canvas.getContext("2d")
-	ctx.clearRect(0, 0, canvas.width, canvas.height)
-	ctx.fillStyle = '#07ef7b'
-
+	let ctx = nctx()
 	for (let i = 0; i < hyb["a"].length; i++){	
 		hyb["a"][i] += hyb["ad"][i];
 
@@ -187,11 +190,7 @@ const r_hyb = (hyb) => {
 
 const r_sph = (sph) => {
 
-	let canvas = document.getElementById("c")
-	let ctx = canvas.getContext("2d")
-	ctx.clearRect(0, 0, canvas.width, canvas.height)
-	ctx.fillStyle = '#07ef7b'
-
+	let ctx = nctx()
 	for (let i = 0; i < sph["a"].length; i++){	
 		sph["a"][i] += sph["ad"][i];
 
@@ -227,12 +226,8 @@ const r_sph = (sph) => {
 
 const r_sqr = (sqr) => {
 
-	let canvas = document.getElementById("c")
-	let ctx = canvas.getContext("2d")
+	let ctx = nctx()
 	let origin = [xo, yo]
-	ctx.clearRect(0, 0, canvas.width, canvas.height)
-	ctx.fillStyle = '#07ef7b'
-
 	let i = null, x = 0, y = 0, z = 0
 
 	for (i = 0; i < sqr["a"].length; i++){	
@@ -280,11 +275,7 @@ const r_sqr = (sqr) => {
 
 const r_pyr = (pyr) => {
 
-	let canvas = document.getElementById("c")
-	let ctx = canvas.getContext("2d")
-	ctx.clearRect(0, 0, canvas.width, canvas.height)
-	ctx.fillStyle = '#07ef7b'
-
+	let ctx = nctx()
 	let origin = [xo, yo]
 	let i = null, x = 0, y = 0, z = 0
 
@@ -332,11 +323,7 @@ const r_pyr = (pyr) => {
 
 const r_nut = (nut) => {
 
-	let canvas = document.getElementById("c")
-	let ctx = canvas.getContext("2d")
-	ctx.clearRect(0, 0, canvas.width, canvas.height)
-	ctx.fillStyle = '#07ef7b'
-
+	let ctx = nctx()
 	let x = 0, y = 0, z = 0, _x = 0, _y = 0
 
 	let _a = nut["a"][0], _b = nut["a"][1], _g = nut["a"][2]
