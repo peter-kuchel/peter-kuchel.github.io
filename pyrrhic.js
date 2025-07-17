@@ -79,13 +79,14 @@ const sph = {
 	d : [50, 50]
 }
 
-const kb = {
+const hyb = {
 	a : [0,0,0],
 	ad : [0.01,0.02,0.03],
-	v : 5,
+	vd : 0.1,
+	vb : 5
 }
 
-const r_kb = (kb) => {
+const r_hyb = (hyb) => {
 
 
 	let canvas = document.getElementById("c")
@@ -93,35 +94,36 @@ const r_kb = (kb) => {
 	ctx.clearRect(0, 0, canvas.width, canvas.height)
 	ctx.fillStyle = '#07ef7b'
 
-	for (let i = 0; i < kb["a"].length; i++){	
-		kb["a"][i] += kb["ad"][i];
+	for (let i = 0; i < hyb["a"].length; i++){	
+		hyb["a"][i] += hyb["ad"][i];
 
-		if (kb["a"][i] > 100 || kb["a"][i] <  -100) kb["a"][i] = 0;
+		if (hyb["a"][i] > 100 || hyb["a"][i] <  -100) hyb["a"][i] = 0;
 	}
 
-	let _a = kb["a"][0], _b = kb["a"][1], _g = kb["a"][2]
+	let _a = hyb["a"][0], _b = hyb["a"][1], _g = hyb["a"][2]
 
-	const fx = _fx(_a,_b,_g)  
+	const fx = _fx(_a,_b,_g) 
 	const fy = _fy(_a,_b,_g)  
 
 	let m = 2 * Math.PI 
 	let x = 0, y = 0, z = 0, _x = 0, _y = 0
-	    dt = m / 50
-		, _v = kb["v"]
+	    dt = m / 50,
+      	    vb = hyb["vb"], 
+	    _vd = hyb["vd"]
 
-	for (let v = -5; v <= 5; v += 0.1){
-	for (let t =0; t < m; t += dt){
-		if (v > -3 && v < 3) continue	
-		x = Math.cosh(v)*Math.cos(t)
-		y = Math.cosh(v)*Math.sin(t)
-		z = Math.sinh(v)
+	for ( let v = vb * -1; v <= vb; v += _vd){
 
-		_x = fx(x,y,z) + xo
-		_y = fy(x,y,z) + yo
+		for (let t = 0; t < m; t += dt){
+			
+			x = Math.cosh(v)*Math.cos(t)
+			y = Math.cosh(v)*Math.sin(t) 
+			z = Math.sinh(v) 
+			ctx.fillRect(fx(x,y,z) + xo, fy(x,y,z) + yo, 1.5, 1.5)	
 
-		ctx.fillRect(_x, _y, 1.5, 1.5)	
 		}
+		
 	}
+
 }
 
 const r_sph = (sph) => {
@@ -314,7 +316,7 @@ const select_view = () => {
 	switch(track){
 
 		case 0: 
-			tmr = setInterval(r_kb, 65, kb)
+			tmr = setInterval(r_hyb, 65, hyb)
 			break;
 		case 4: 
 			tmr = setInterval(r_sqr, 65, sqr)
