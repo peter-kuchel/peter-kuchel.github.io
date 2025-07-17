@@ -1,5 +1,5 @@
 let track = 0;
-const min_c = 0, max_c = 4;
+const min_c = 0, max_c = 5;
 
 (() => {
 
@@ -33,7 +33,7 @@ const draw_line = (x0, y0, x1, y1, d, ctx) => {
 	let v = x1 - x0 == 0
 	let m = v ? 0 : ( y1 - y0 ) / (x1 - x0),
             b = y0 - (m * x0), 
-	    i = (x1 - x0) / d, j = (y1 - y0) / d
+	    i = (x1 - x0) / d, j = (y1 - y0) / d,
 	    xj = x0, yj = v ? y0 : 0 
 
  	for (let k = 0; k < d; k++){
@@ -84,6 +84,61 @@ const hyb = {
 	ad : [0.01,0.02,0.03],
 	vd : 0.1,
 	vb : 5
+}
+
+const mhyb = {
+	r : 50,
+	ad : [0.02, -0.01, 0.03],
+	a : [0,0,0],
+	oz : 150,
+	u : 0,
+	d : 65
+}
+
+const r_mhyb = (myhb) => {
+
+
+	let canvas = document.getElementById("c")
+	let ctx = canvas.getContext("2d")
+	ctx.clearRect(0, 0, canvas.width, canvas.height)
+	ctx.fillStyle = '#07ef7b'
+
+	for (let i = 0; i < mhyb["a"].length; i++){	
+		mhyb["a"][i] += mhyb["ad"][i];
+
+		if (mhyb["a"][i] > 720 || mhyb["a"][i] <  -720) mhyb["a"][i] = 0;
+	}
+
+	let _a = mhyb["a"][0], _b = mhyb["a"][1], _g = mhyb["a"][2]
+
+	const fx = _fx(_a,_b,_g) 
+	const fy = _fy(_a,_b,_g)  
+
+	let m = 2 * Math.PI, d = mhyb["d"], dt = m / d,
+		r = mhyb["r"], u = mhyb["u"]
+
+	for (let t = 0; t < m; t += dt){
+		
+		let x = Math.cos(t) * r
+		let y = Math.sin(t) * r
+		let z = 1
+
+		let x_ = fx(x,y,z) + xo
+		let y_ = fy(x,y,z) + yo
+		ctx.fillRect(x_, y_, 1.5, 1.5)	
+
+		z -= mhyb["oz"]
+		let __x = x*Math.cos(u) - y*Math.sin(u)
+		let __y = x*Math.sin(u) + y*Math.cos(u)
+		
+		let _x = fx(__x,__y,z) + xo
+		let _y = fy(__x,__y,z) + yo
+		ctx.fillRect(_x, _y, 1.5, 1.5)	
+		draw_line(x_, y_, _x, _y, d, ctx)
+	}
+
+	mhyb["u"] += 0.03
+	if (mhyb["u"] > 360) mhyb["u"] = 0
 }
 
 const r_hyb = (hyb) => {
@@ -314,17 +369,20 @@ const select_view = () => {
 	}
 	
 	switch(track){
-
-		case 0: 
+		
+		case 5: 
+			tmr = setInterval(r_mhyb, 65, mhyb)
+			break;
+		case 2: 
 			tmr = setInterval(r_hyb, 65, hyb)
 			break;
-		case 4: 
+		case 0: 
 			tmr = setInterval(r_sqr, 65, sqr)
 			break;
-		case 2:
+		case 1:
 			tmr = setInterval(r_pyr, 65, pyr)
 			break;
-		case 1: 
+		case 4: 
 			tmr = setInterval(r_nut, 65, nut)
 			break;
 		case 3: 
