@@ -68,15 +68,17 @@ const nut = {
 	r2 : 20,
 	a : [0, 0, 0],
 	ad : [-0.008, -0.12, -0.03],
-	d: [10, 30] // (dt, du)
+	d: [30, 90] // (dt, du)
 }
 
 const sph = {
 
 	r: 60,
 	a : [0, 0, 0],
-	ad : [0.11, -0.04, 0.06],
-	d : [50, 50]
+	ad : [0.07, -0.09, 0.06],
+	d : [50, 50],
+	rd : 1
+
 }
 
 const hyb = {
@@ -88,11 +90,12 @@ const hyb = {
 
 const mhyb = {
 	r : 50,
-	ad : [0.02, -0.01, 0.03],
+	ad : [0.03, 0.06, 0.9],
 	a : [0,0,0],
-	oz : 150,
+	oz : 75,
 	u : 0,
-	d : 65
+	ud : 0.15,
+	d : 75
 }
 
 const r_mhyb = (myhb) => {
@@ -121,13 +124,14 @@ const r_mhyb = (myhb) => {
 		
 		let x = Math.cos(t) * r
 		let y = Math.sin(t) * r
-		let z = 1
+		let z = mhyb["oz"]
+
 
 		let x_ = fx(x,y,z) + xo
 		let y_ = fy(x,y,z) + yo
 		ctx.fillRect(x_, y_, 1.5, 1.5)	
 
-		z -= mhyb["oz"]
+		z *= -1
 		let __x = x*Math.cos(u) - y*Math.sin(u)
 		let __y = x*Math.sin(u) + y*Math.cos(u)
 		
@@ -137,7 +141,7 @@ const r_mhyb = (myhb) => {
 		draw_line(x_, y_, _x, _y, d, ctx)
 	}
 
-	mhyb["u"] += 0.03
+	mhyb["u"] += mhyb["ud"]
 	if (mhyb["u"] > 360) mhyb["u"] = 0
 }
 
@@ -216,6 +220,9 @@ const r_sph = (sph) => {
 
 		}
 	}
+	sph["r"] -= sph["rd"]
+	if (sph["r"] < 25 || sph["r"] > 190) 
+		sph["rd"] *= -1
 }
 
 const r_sqr = (sqr) => {
