@@ -44,6 +44,26 @@ const draw_line = (x0, y0, x1, y1, d, ctx) => {
 	}
 }
 
+const nctx = () => {
+
+	let canvas = document.getElementById("c")
+	let ctx = canvas.getContext("2d")
+	ctx.clearRect(0, 0, canvas.width, canvas.height)
+	ctx.fillStyle = '#07ef7b'
+
+	return ctx
+
+}
+
+const adja = (o) => {
+
+	for (let i = 0; i < o["a"].length; i++){	
+		o["a"][i] += o["ad"][i];
+
+		if (o["a"][i] > 100 || o["a"][i] <  -100) o["a"][i] = 0;
+	}
+}
+
 const sqr = {
 	f1 : [[-50, -50, 0], [50, -50, 0], [50, 50, 0], [-50, 50, 0], [-50, -50, 0]],
 	f2 : [[-50, -50, -100], [50, -50, -100], [50, 50, -100], [-50, 50, -100], [-50, -50, -100]],
@@ -98,27 +118,13 @@ const mhyb = {
 	d : 75
 }
 
-const nctx = () => {
 
-	let canvas = document.getElementById("c")
-	let ctx = canvas.getContext("2d")
-	ctx.clearRect(0, 0, canvas.width, canvas.height)
-	ctx.fillStyle = '#07ef7b'
-
-	return ctx
-
-}
-
-const r_mhyb = (myhb) => {
+const r_mhyb = (mhyb) => {
 
 
 	let ctx = nctx()
-	for (let i = 0; i < mhyb["a"].length; i++){	
-		mhyb["a"][i] += mhyb["ad"][i];
-
-		if (mhyb["a"][i] > 720 || mhyb["a"][i] <  -720) mhyb["a"][i] = 0;
-	}
-
+	
+	adja(mhyb)
 	let _a = mhyb["a"][0], _b = mhyb["a"][1], _g = mhyb["a"][2]
 
 	const fx = _fx(_a,_b,_g) 
@@ -156,12 +162,8 @@ const r_hyb = (hyb) => {
 
 
 	let ctx = nctx()
-	for (let i = 0; i < hyb["a"].length; i++){	
-		hyb["a"][i] += hyb["ad"][i];
-
-		if (hyb["a"][i] > 100 || hyb["a"][i] <  -100) hyb["a"][i] = 0;
-	}
-
+	
+	adja(hyb)
 	let _a = hyb["a"][0], _b = hyb["a"][1], _g = hyb["a"][2]
 
 	const fx = _fx(_a,_b,_g) 
@@ -191,12 +193,8 @@ const r_hyb = (hyb) => {
 const r_sph = (sph) => {
 
 	let ctx = nctx()
-	for (let i = 0; i < sph["a"].length; i++){	
-		sph["a"][i] += sph["ad"][i];
-
-		if (sph["a"][i] > 100 || sph["a"][i] <  -100) sph["a"][i] = 0;
-	}
-
+	
+	adja(sph)
 	let _a = sph["a"][0], _b = sph["a"][1], _g = sph["a"][2]
 
 	const fx = _fx(_a,_b,_g)  
@@ -230,12 +228,7 @@ const r_sqr = (sqr) => {
 	let origin = [xo, yo]
 	let i = null, x = 0, y = 0, z = 0
 
-	for (i = 0; i < sqr["a"].length; i++){	
-		sqr["a"][i] += sqr["ad"][i];
-
-		if (sqr["a"][i] > 100 || sqr["a"][i] <  -100) sqr["a"][i] = 0;
-	}
-
+	adja(sqr)
 	let _a = sqr["a"][0], _b = sqr["a"][1], _g = sqr["a"][2]
 
 	const fx = _fx(_a,_b,_g)  
@@ -305,6 +298,7 @@ const r_pyr = (pyr) => {
 		ps_p1[i][1] = fy(x,y,z)
 
 	}
+
 	let pi = ps_p1[ps_p1.length - 1]
 	let dis = pyr["d"]	
 
@@ -318,6 +312,7 @@ const r_pyr = (pyr) => {
 		_x = origin[0] + pi[0]; _y = origin[1] + pi[1]	
 		draw_line(x, y, _x, _y, dis ,ctx)
 	}
+
 	ctx.fillRect(_x, _y, 1.5, 1.5)	
 }
 
@@ -331,12 +326,7 @@ const r_nut = (nut) => {
 	const fx = _fx(_a,_b,_g)  
 	const fy = _fy(_a,_b,_g)  
 
-	
-	for (let i = 0; i < nut["a"].length; i++){	
-		nut["a"][i] += nut["ad"][i];
-
-		if (nut["a"][i] > 100 || nut["a"][i] <  -100) nut["a"][i] = 0;
-	}
+	adja(nut)
 	let R = nut["r1"], r = nut["r2"]
 
 	let m = 2 * Math.PI
